@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Adventure with Nia</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Add favicon -->
+    <link rel="icon" type="image/png" href="images/NiaEd-favicon.png">
+    <!-- Add meta tag to ensure modules are properly served -->
+    <meta name="importmap-type" content="systemjs-importmap">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="images/NiaEd-logo.png" alt="NiaEd Logo" class="logo">
+            <h1>Math Adventure with Nia</h1>
+        </div>
+    </header>
+
+    <nav id="main-menu">
+        <button id="btn-number-friends">Number Friends</button>
+        <button id="btn-addition-adventure">Addition Adventure</button>
+        <button id="btn-subtraction-safari">Subtraction Safari</button>
+        <button id="btn-money-market">Money Market</button>
+    </nav>
+
+    <main id="game-area">
+        <div id="welcome-screen">
+            <h2>Welcome to Math Adventure!</h2>
+            <p>Join Nia on an exciting journey to explore math concepts.</p>
+            <img src="images/nia-character.png" alt="Nia the character" class="character-image">
+            <p>Choose a module from the menu above to begin.</p>
+        </div>
+
+        <div id="number-friends-module" class="module" style="display: none;">
+            <h3>Number Friends</h3>
+            <p>Explore numbers and their properties!</p>
+            
+            <div class="number-activities">
+                <div class="activity-selector">
+                    <button class="activity-btn active" data-activity="number-explorer">Number Explorer</button>
+                    <button class="activity-btn" data-activity="odd-even">Odd & Even</button>
+                    <button class="activity-btn" data-activity="number-patterns">Number Patterns</button>
+                    <button class="activity-btn" data-activity="place-value">Place Value</button>
+                </div>
+                
+                <div id="activity-container">
+                    <div id="number-explorer-activity" class="number-activity active">
+                        <h4>Number Explorer</h4>
+                        <p>Select a number to explore its properties!</p>
+                        
+                        <div class="number-wheel-container">
+                            <div class="number-display">5</div>
+                            <div class="number-controls">
+                                <button id="decrease-number">-</button>
+                                <input type="number" id="current-number" min="0" max="100" value="5">
+                                <button id="increase-number">+</button>
+                            </div>
+                        </div>
+                        
+                        <div class="number-visual-container"></div>
+                        
+                        <div class="number-properties">
+                            <div class="property-card" id="property-even-odd">
+                                <h5>Even or Odd?</h5>
+                                <p class="property-value">Odd</p>
+                            </div>
+                            <div class="property-card" id="property-prime">
+                                <h5>Is Prime?</h5>
+                                <p class="property-value">Yes</p>
+                            </div>
+                            <div class="property-card" id="property-factors">
+                                <h5>Factors</h5>
+                                <p class="property-value">1, 5</p>
+                            </div>
+                            <div class="property-card" id="property-multiples">
+                                <h5>First 5 Multiples</h5>
+                                <p class="property-value">5, 10, 15, 20, 25</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="odd-even-activity" class="number-activity">
+                        <h4>Odd & Even Numbers</h4>
+                        <div class="sorting-game">
+                            <div class="sorting-instructions">
+                                <p>Sort the numbers into odd and even groups!</p>
+                                <p><strong>Even numbers</strong> can be divided by 2 with no remainder (like 2, 4, 6, 8).</p>
+                                <p><strong>Odd numbers</strong> have a remainder of 1 when divided by 2 (like 1, 3, 5, 7).</p>
+                                <p class="tablet-friendly-message">Tap each number and choose whether it's odd or even!</p>
+                            </div>
+                            
+                            <div class="sorting-area">
+                                <div class="sorting-numbers-container">
+                                    <h5>Numbers to Sort</h5>
+                                    <div id="numbers-to-sort" class="numbers-grid">
+                                        <!-- Numbers will be added via JavaScript -->
+                                    </div>
+                                </div>
+                                
+                                <div class="sorting-containers">
+                                    <div class="sorting-container" id="even-container">
+                                        <h5>Even Numbers</h5>
+                                        <div class="sorted-numbers" id="even-numbers"></div>
+                                    </div>
+                                    <div class="sorting-container" id="odd-container">
+                                        <h5>Odd Numbers</h5>
+                                        <div class="sorted-numbers" id="odd-numbers"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="sorting-controls">
+                                <button id="check-sorting" class="check-btn">Check My Sorting</button>
+                                <button id="new-sorting-game" class="new-game-btn">New Numbers</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="number-patterns-activity" class="number-activity">
+                        <h4>Number Patterns</h4>
+                        <div class="pattern-game">
+                            <div class="pattern-instructions">
+                                <p>Can you find the pattern and fill in the missing numbers?</p>
+                                <p>Look for a rule that connects the numbers in the sequence.</p>
+                            </div>
+                            <div class="pattern-sequence" id="pattern-sequence">
+                                <!-- Pattern will be added via JavaScript -->
+                            </div>
+                            <div class="pattern-controls">
+                                <button id="check-pattern" class="check-btn">Check Answers</button>
+                                <button id="pattern-hint" class="hint-btn">Get Hint</button>
+                                <button id="new-pattern" class="new-game-btn">New Pattern</button>
+                            </div>
+                            <div class="pattern-feedback" id="pattern-feedback"></div>
+                        </div>
+                    </div>
+                    
+                    <div id="place-value-activity" class="number-activity">
+                        <h4>Place Value</h4>
+                        <div class="place-value-game">
+                            <div class="number-input-container">
+                                <label for="place-value-number">Enter a number (up to 3 digits):</label>
+                                <input type="number" id="place-value-number" min="0" max="999" value="352">
+                                <button id="analyze-number" class="analyze-btn">Analyze</button>
+                            </div>
+                            <div class="place-value-chart">
+                                <div class="place-column">
+                                    <div class="place-header">Hundreds</div>
+                                    <div class="place-value" id="hundreds-value">3</div>
+                                    <div class="place-blocks" id="hundreds-blocks"></div>
+                                </div>
+                                <div class="place-column">
+                                    <div class="place-header">Tens</div>
+                                    <div class="place-value" id="tens-value">5</div>
+                                    <div class="place-blocks" id="tens-blocks"></div>
+                                </div>
+                                <div class="place-column">
+                                    <div class="place-header">Ones</div>
+                                    <div class="place-value" id="ones-value">2</div>
+                                    <div class="place-blocks" id="ones-blocks"></div>
+                                </div>
+                            </div>
+                            <div class="expanded-form-container">
+                                <h5>Expanded Form:</h5>
+                                <p id="expanded-form">3 × 100 + 5 × 10 + 2 × 1</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="addition-adventure-module" class="module" style="display: none;">
+            <h3>Addition Adventure</h3>
+            <div id="level-selection">
+                <h4>Choose a Level:</h4>
+                <div class="level-buttons">
+                    <button class="level-btn" data-level="1">Level 1: Single Digit</button>
+                    <button class="level-btn" data-level="2">Level 2: Two Digits</button>
+                    <button class="level-btn" data-level="3">Level 3: Double Digits</button>
+                    <button class="level-btn" data-level="4">Level 4: Carrying</button>
+                    <button class="level-btn" data-level="5">Level 5: Word Problems</button>
+                    <button class="level-btn" data-level="6">Level 6: Properties</button>
+                    <button class="level-btn" data-level="7">Level 7: Four Digits</button>
+                </div>
+                <p class="level-description" id="level-description">Select a level to start practicing addition!</p>
+            </div>
+            <div id="current-addition-problem">
+            </div>
+            <div id="visual-tools">
+                <div id="block-builder" style="display: none;">
+                    <h5>Block Builder</h5>
+                </div>
+                <!-- Add hint container -->
+                <div id="hint-container" style="display: none;">
+                    <h5>Hint</h5>
+                    <div id="hint-content"></div>
+                </div>
+            </div>
+            <div id="input-area">
+            </div>
+            <div id="feedback-area">
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Math Adventure with Nia</p>
+    </footer>
+
+    <!-- Direct controls for critical UI elements -->
+    <script src="direct-controls.js"></script>
+    
+    <!-- Debug script (only active on localhost) -->
+    <script src="debug.js"></script>
+    
+    <!-- Use modules for better code organization -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>
