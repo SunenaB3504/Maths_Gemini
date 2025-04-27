@@ -1,0 +1,128 @@
+/**
+ * Button Styles for Math Adventure with Nia
+ * Enhanced UI components with modern styling
+ */
+
+/* Enhanced Hint Button */
+.hint-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px 10px 15px;
+    background: linear-gradient(135deg, #ff9a3c, #ff7043);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 8px rgba(255, 122, 67, 0.3);
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.hint-btn::before {
+    content: "💡";
+    margin-right: 8px;
+    font-size: 18px;
+    transform: translateY(-1px);
+}
+
+.hint-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(255, 255, 255, 0.2), transparent);
+    clip-path: polygon(0 0, 100% 0, 100% 20%, 0 80%);
+    opacity: 0.5;
+}
+
+.hint-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(255, 122, 67, 0.4);
+    background: linear-gradient(135deg, #ffad60, #ff8a65);
+}
+
+.hint-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(255, 122, 67, 0.3);
+}
+
+/* Add pulsating effect when hint is available */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 122, 67, 0.6); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 122, 67, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 122, 67, 0); }
+}
+
+.hint-pulse {
+    animation: pulse 2s infinite;
+}
+
+/* Different hint button styles based on level */
+/* Level 2-4: Basic style */
+.level-btn[data-level="2"].active ~ #current-addition-problem .hint-btn,
+.level-btn[data-level="3"].active ~ #current-addition-problem .hint-btn,
+.level-btn[data-level="4"].active ~ #current-addition-problem .hint-btn {
+    background: linear-gradient(135deg, #4caf50, #2e7d32);
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+}
+
+.level-btn[data-level="2"].active ~ #current-addition-problem .hint-btn:hover,
+.level-btn[data-level="3"].active ~ #current-addition-problem .hint-btn:hover,
+.level-btn[data-level="4"].active ~ #current-addition-problem .hint-btn:hover {
+    background: linear-gradient(135deg, #66bb6a, #388e3c);
+    box-shadow: 0 6px 12px rgba(76, 175, 80, 0.4);
+}
+
+/* Level 5: Word Problems */
+.level-btn[data-level="5"].active ~ #current-addition-problem .hint-btn {
+    background: linear-gradient(135deg, #42a5f5, #1976d2);
+    box-shadow: 0 4px 8px rgba(66, 165, 245, 0.3);
+}
+
+.level-btn[data-level="5"].active ~ #current-addition-problem .hint-btn:hover {
+    background: linear-gradient(135deg, #64b5f6, #1e88e5);
+    box-shadow: 0 6px 12px rgba(66, 165, 245, 0.4);
+}
+
+/* Level 6: Properties */
+.level-btn[data-level="6"].active ~ #current-addition-problem .hint-btn {
+    background: linear-gradient(135deg, #ab47bc, #7b1fa2);
+    box-shadow: 0 4px 8px rgba(171, 71, 188, 0.3);
+}
+
+.level-btn[data-level="6"].active ~ #current-addition-problem .hint-btn:hover {
+    background: linear-gradient(135deg, #ba68c8, #8e24aa);
+    box-shadow: 0 6px 12px rgba(171, 71, 188, 0.4);
+}
+
+/* Level 7-8: Four Digits */
+.level-btn[data-level="7"].active ~ #current-addition-problem .hint-btn,
+.level-btn[data-level="8"].active ~ #current-addition-problem .hint-btn {
+    background: linear-gradient(135deg, #5c6bc0, #3949ab);
+    box-shadow: 0 4px 8px rgba(92, 107, 192, 0.3);
+}
+
+.level-btn[data-level="7"].active ~ #current-addition-problem .hint-btn:hover,
+.level-btn[data-level="8"].active ~ #current-addition-problem .hint-btn:hover {
+    background: linear-gradient(135deg, #7986cb, #3f51b5);
+    box-shadow: 0 6px 12px rgba(92, 107, 192, 0.4);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .hint-btn {
+        font-size: 14px;
+        padding: 8px 16px 8px 12px;
+    }
+    
+    .hint-btn::before {
+        font-size: 16px;
+    }
+}

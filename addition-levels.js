@@ -3,6 +3,9 @@
  * Defines the levels and problem generators for Addition Adventure module
  */
 
+// Import the property exercises
+import { getPropertyExercises, getExercisesByPropertyType } from './addition-properties-exercises.js';
+
 // Addition Level Definitions
 const additionLevels = [
     {
@@ -23,7 +26,7 @@ const additionLevels = [
         id: 3,
         name: "Double Digits",
         description: "Add two two-digit numbers together.",
-        problemCount: 8, // Increased problem count for more practice
+        problemCount: 8,
         visualAid: "place-value"
     },
     {
@@ -50,7 +53,14 @@ const additionLevels = [
     {
         id: 7,
         name: "4-Digit Addition",
-        description: "Practice adding four-digit numbers with multiple carrying steps.",
+        description: "Practice adding four-digit numbers.",
+        problemCount: 5,
+        visualAid: "place-value"
+    },
+    {
+        id: 8,
+        name: "4D Carrying",
+        description: "Master addition of 4-digit numbers with multiple carrying steps.",
         problemCount: 5,
         visualAid: "place-value"
     }
@@ -78,6 +88,8 @@ export function getRandomProblem(levelId) {
             return generatePropertiesProblem();
         case 7:
             return generateFourDigitProblem();
+        case 8:
+            return generateFourDigitCarryingProblem();
         default:
             return generateSingleDigitProblem();
     }
@@ -269,94 +281,36 @@ function generateWordProblem() {
     };
 }
 
-// Generate a problem focusing on addition properties (Level 6)
+// Generate a properties problem (Level 6)
 function generatePropertiesProblem() {
-    // Choose which property to focus on
-    const propertyTypes = ["commutative", "associative", "identity"];
-    const selectedProperty = propertyTypes[Math.floor(Math.random() * propertyTypes.length)];
+    // Get all available property exercises
+    const allExercises = getPropertyExercises();
     
-    let problem = {
-        property: selectedProperty,
-        isWordProblem: false
+    // Select a random exercise
+    const selectedExercise = allExercises[Math.floor(Math.random() * allExercises.length)];
+    
+    // Format the problem for display
+    const questionLines = [
+        selectedExercise.question,
+        selectedExercise.options[0],
+        selectedExercise.options[1],
+        selectedExercise.options[2],
+        selectedExercise.options[3]
+    ];
+    
+    return {
+        id: selectedExercise.id,
+        display: questionLines.join('\n'),
+        answer: selectedExercise.answer,
+        explanation: selectedExercise.explanation,
+        propertyType: selectedExercise.propertyType,
+        multipleChoice: true
     };
-    
-    if (selectedProperty === "commutative") {
-        // Commutative property: a + b = b + a
-        const a = Math.floor(Math.random() * 20) + 1; // 1-20
-        const b = Math.floor(Math.random() * 20) + 1; // 1-20
-        
-        // Randomly choose whether to ask for the result or the missing addend
-        const askForResult = Math.random() > 0.5;
-        
-        if (askForResult) {
-            problem.num1 = a;
-            problem.num2 = b;
-            problem.answer = a + b;
-            problem.display = `${a} + ${b} = ? (Commutative Property)`;
-            problem.hint = `The commutative property means the order of addends doesn't matter: ${a} + ${b} = ${b} + ${a}`;
-        } else {
-            // Ask for missing value in the equation
-            const sum = a + b;
-            problem.num1 = b;
-            problem.answer = a;
-            problem.display = `${b} + ? = ${sum} (Commutative Property: We know that ${a} + ${b} = ${sum})`;
-            problem.hint = `According to the commutative property, if ${a} + ${b} = ${sum}, then ${b} + ${a} = ${sum} too.`;
-        }
-        
-    } else if (selectedProperty === "associative") {
-        // Associative property: (a + b) + c = a + (b + c)
-        const a = Math.floor(Math.random() * 10) + 1; // 1-10
-        const b = Math.floor(Math.random() * 10) + 1; // 1-10
-        const c = Math.floor(Math.random() * 10) + 1; // 1-10
-        
-        // Different ways of grouping
-        const result1 = (a + b) + c;
-        const result2 = a + (b + c);
-        
-        problem.num1 = a;
-        problem.num2 = b;
-        problem.num3 = c;
-        problem.answer = result1; // same as result2
-        problem.display = `Which is equal to ${a} + ${b} + ${c}? (Associative Property)
-                         \nA) (${a} + ${b}) + ${c}
-                         \nB) ${a} + (${b} + ${c})
-                         \nC) Both are equal
-                         \nD) Neither`;
-        problem.hint = `The associative property states that the grouping of addends doesn't matter: (${a} + ${b}) + ${c} = ${a} + (${b} + ${c})`;
-        problem.multipleChoice = true;
-        problem.options = ["A", "B", "C", "D"];
-        problem.correctOption = "C";
-        
-    } else { // identity property
-        // Identity property: a + 0 = a
-        const a = Math.floor(Math.random() * 50) + 1; // 1-50
-        
-        // Choose between asking for the sum or the missing addend
-        const askType = Math.floor(Math.random() * 3); // 0, 1, or 2
-        
-        if (askType === 0) {
-            // Ask for the sum
-            problem.num1 = a;
-            problem.num2 = 0;
-            problem.answer = a;
-            problem.display = `${a} + 0 = ? (Identity Property)`;
-            problem.hint = `The identity property states that any number plus zero equals the original number.`;
-        } else if (askType === 1) {
-            // Ask for the missing addend
-            problem.num1 = a;
-            problem.answer = 0;
-            problem.display = `${a} + ? = ${a} (Identity Property)`;
-            problem.hint = `What number can you add to ${a} to still get ${a}?`;
-        } else {
-            // Ask for the value where 0 is added to it
-            problem.num1 = 0;
-            problem.answer = a;
-            problem.display = `0 + ? = ${a} (Identity Property)`;
-            problem.hint = `When zero is added to any number, the result is that number.`;
-        }
-    }
-    
-    return problem;
+}
+
+// Check answer for properties problems
+function checkPropertiesAnswer(problem, userAnswer) {
+    return problem.answer === userAnswer;
 }
 
 // Generate a 4-digit addition problem (Level 7)
@@ -409,6 +363,69 @@ function generateFourDigitProblem() {
     };
 }
 
+// Generate a 4-digit addition problem with multiple carrying (Level 8)
+function generateFourDigitCarryingProblem() {
+    // Different problem types to ensure carrying in multiple positions
+    const problemTypes = [
+        // Type 1: Carry in all positions (9's in first number)
+        () => {
+            const num1 = 9999;
+            const num2 = Math.floor(Math.random() * 9000) + 1000; // 1000-9999
+            return { num1, num2 };
+        },
+        // Type 2: Carry in ones, tens, and hundreds
+        () => {
+            const num1 = generateWithSpecificDigits(
+                Math.floor(Math.random() * 9) + 1, // thousands: 1-9
+                9, // hundreds: 9
+                9, // tens: 9 
+                9  // ones: 9
+            );
+            const num2 = generateWithSpecificDigits(
+                Math.floor(Math.random() * 9) + 1, // thousands: 1-9 
+                Math.floor(Math.random() * 9) + 1, // hundreds: 1-9
+                Math.floor(Math.random() * 9) + 1, // tens: 1-9
+                Math.floor(Math.random() * 9) + 1  // ones: 1-9
+            );
+            return { num1, num2 };
+        },
+        // Type 3: Numbers that sum to create multiple carries
+        () => {
+            const num1 = generateWithSpecificDigits(
+                5, // thousands: 5
+                8, // hundreds: 8
+                7, // tens: 7
+                6  // ones: 6
+            );
+            const num2 = generateWithSpecificDigits(
+                5, // thousands: 5
+                9, // hundreds: 9
+                8, // tens: 8
+                7  // ones: 7
+            );
+            return { num1, num2 };
+        }
+    ];
+    
+    // Select a random problem type
+    const selectedType = problemTypes[Math.floor(Math.random() * problemTypes.length)];
+    const { num1, num2 } = selectedType();
+    
+    return {
+        num1: num1,
+        num2: num2,
+        answer: num1 + num2,
+        display: `${num1} + ${num2} = ?`,
+        isWordProblem: false,
+        hasMultipleCarries: true
+    };
+}
+
+// Helper function to generate a number with specific digits
+function generateWithSpecificDigits(thousands, hundreds, tens, ones) {
+    return thousands * 1000 + hundreds * 100 + tens * 10 + ones;
+}
+
 // Helper function to generate a number with specific digits
 function generateNumberWithDigits(thousands, hundreds, tens, ones) {
     return thousands * 1000 + hundreds * 100 + tens * 10 + ones;
@@ -418,7 +435,7 @@ function generateNumberWithDigits(thousands, hundreds, tens, ones) {
 export function checkAnswer(problem, userAnswer) {
     // For multiple choice questions (used in properties level)
     if (problem.multipleChoice) {
-        return userAnswer.toUpperCase() === problem.correctOption;
+        return checkPropertiesAnswer(problem, userAnswer);
     }
     
     // For regular numerical answers
