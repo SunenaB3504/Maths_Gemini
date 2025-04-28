@@ -1,69 +1,86 @@
 /**
- * Debug Utilities for Math Adventure with Nia
- * 
- * This file provides helpful debugging functions to diagnose issues in the application
+ * Debug Script
+ * This script adds debugging functionality for developers.
+ * Only runs on localhost or when debug mode is enabled.
  */
 
-// Check if all required DOM elements exist
-function checkDomElements() {
-    console.log('=== DOM Element Check ===');
+(function() {
+    // Check if we're in a development environment
+    const isLocalhost = window.location.hostname === 'localhost' || 
+                        window.location.hostname === '127.0.0.1';
+    const debugMode = localStorage.getItem('niaDebugMode') === 'true';
     
-    const requiredElements = [
-        'welcome-screen',
-        'number-friends-module',
-        'addition-adventure-module',
-        'btn-number-friends',
-        'btn-addition-adventure',
-        'main-menu'
-    ];
+    if (!isLocalhost && !debugMode) return;
     
-    requiredElements.forEach(id => {
-        const element = document.getElementById(id);
-        if (element) {
-            console.log(`✓ Found element: #${id}`);
-        } else {
-            console.error(`✗ Missing element: #${id}`);
-        }
-    });
+    console.log('Debug mode active');
     
-    console.log('=== Module Display Check ===');
-    document.querySelectorAll('.module').forEach(module => {
-        console.log(`Module ${module.id}: display = ${window.getComputedStyle(module).display}`);
-    });
-}
-
-// Add a diagnostic button to the page
-function addDebugButton() {
-    const button = document.createElement('button');
-    button.textContent = 'Run Diagnostics';
-    button.id = 'debug-button';
-    button.style.position = 'fixed';
-    button.style.bottom = '10px';
-    button.style.right = '10px';
-    button.style.zIndex = '9999';
-    button.style.backgroundColor = '#ff9800';
-    button.style.color = 'white';
-    button.style.border = 'none';
-    button.style.borderRadius = '4px';
-    button.style.padding = '8px 12px';
-    button.style.cursor = 'pointer';
-    
-    button.addEventListener('click', function() {
-        checkDomElements();
-    });
-    
-    document.body.appendChild(button);
-}
-
-// Initialize debug tools in development environment
-if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-    window.addEventListener('DOMContentLoaded', function() {
-        console.log('Debug tools initialized');
-        addDebugButton();
-        
-        // Install global error handler
-        window.addEventListener('error', function(e) {
-            console.error('Global error:', e.message, 'at', e.filename, ':', e.lineno);
+    // Add debug tools
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add keyboard shortcuts
+        document.addEventListener('keydown', function(event) {
+            // Shift+D to toggle debug panel
+            if (event.shiftKey && event.key === 'D') {
+                toggleDebugPanel();
+            }
         });
+        
+        // Create debug panel
+        createDebugPanel();
     });
-}
+    
+    // Create debug panel
+    function createDebugPanel() {
+        const panel = document.createElement('div');
+        panel.id = 'debug-panel';
+        panel.style.position = 'fixed';
+        panel.style.bottom = '10px';
+        panel.style.right = '10px';
+        panel.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+        panel.style.color = 'white';
+        panel.style.padding = '10px';
+        panel.style.borderRadius = '5px';
+        panel.style.zIndex = '10000';
+        panel.style.display = 'none';
+        panel.style.maxWidth = '300px';
+        panel.style.maxHeight = '400px';
+        panel.style.overflow = 'auto';
+        
+        panel.innerHTML = `
+            <h3>Debug Tools</h3>
+            <button id="debug-reset">Reset All</button>
+            <button id="debug-modules">Show Modules</button>
+            <div id="debug-info"></div>
+        `;
+        
+        document.body.appendChild(panel);
+        
+        // Add event listeners
+        document.getElementById('debug-reset').addEventListener('click', resetApp);
+        document.getElementById('debug-modules').addEventListener('click', showModuleInfo);
+    }
+    
+    // Toggle debug panel
+    function toggleDebugPanel() {
+        const panel = document.getElementById('debug-panel');
+        if (panel) {
+            panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+        }
+    }
+    
+    // Reset app
+    function resetApp() {
+        localStorage.clear();
+        location.reload();
+    }
+    
+    // Show module info
+    function showModuleInfo() {
+        const info = document.getElementById('debug-info');
+        info.innerHTML = '';
+        
+        const modules = document.querySelectorAll('.module');
+        modules.forEach(module => {
+            info.innerHTML += `<p>${module.id}: ${module.style.display}</p>`;
+        });
+    }
+})();

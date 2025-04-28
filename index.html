@@ -9,6 +9,16 @@
     <link rel="stylesheet" href="styles/buttons.css">
     <!-- Add elaborate hint styles -->
     <link rel="stylesheet" href="styles/elaborate-hints.css">
+    <!-- Add Subtraction Safari styles -->
+    <link rel="stylesheet" href="styles/subtraction-safari.css">
+    <!-- Add Number Friends styles -->
+    <link rel="stylesheet" href="styles/number-friends.css">
+    <!-- Add Addition Adventure styles -->
+    <link rel="stylesheet" href="styles/addition-adventure.css">
+    <!-- Add Welcome Screen styles -->
+    <link rel="stylesheet" href="styles/welcome-screen.css">
+    <!-- Add Money Market styles -->
+    <link rel="stylesheet" href="styles/money-market.css">
     <!-- Add favicon -->
     <link rel="icon" type="image/png" href="images/NiaEd-favicon.png">
     <!-- Add meta tag to ensure modules are properly served -->
@@ -31,10 +41,38 @@
 
     <main id="game-area">
         <div id="welcome-screen">
-            <h2>Welcome to Math Adventure!</h2>
-            <p>Join Nia on an exciting journey to explore math concepts.</p>
-            <img src="images/nia-character.png" alt="Nia the character" class="character-image">
-            <p>Choose a module from the menu above to begin.</p>
+            <div class="welcome-container">
+                <div class="welcome-header">
+                    <h2>Welcome to Math Adventure! 🎉</h2>
+                    <div class="welcome-stars">
+                        <span class="star">⭐</span>
+                        <span class="star">✨</span>
+                        <span class="star">⭐</span>
+                        <span class="star">✨</span>
+                        <span class="star">⭐</span>
+                    </div>
+                </div>
+                
+                <div class="welcome-message">
+                    <p>Hey there, math explorer! 👋</p>
+                    <p>Join us on an exciting journey through the amazing world of numbers!</p>
+                    <p>You'll solve puzzles, play games, and discover math magic along the way!</p>
+                </div>
+                
+                <div class="welcome-instructions">
+                    <p>Pick one of the fun adventures from the menu above:</p>
+                    <ul class="adventure-list">
+                        <li>🔢 <strong>Number Friends</strong> - Meet different types of numbers</li>
+                        <li>➕ <strong>Addition Adventure</strong> - Learn to add numbers</li>
+                        <li>➖ <strong>Subtraction Safari</strong> - Explore the world of subtraction</li>
+                        <li>💰 <strong>Money Market</strong> - Play with coins and bills</li>
+                    </ul>
+                </div>
+                
+                <div class="welcome-footer">
+                    <p>Are you ready for the adventure? Let's get started! 🚀</p>
+                </div>
+            </div>
         </div>
 
         <div id="number-friends-module" class="module" style="display: none;">
@@ -95,6 +133,7 @@
                                 <p class="tablet-friendly-message">Tap each number and choose whether it's odd or even!</p>
                             </div>
                             
+
                             <div class="sorting-area">
                                 <div class="sorting-numbers-container">
                                     <h5>Numbers to Sort</h5>
@@ -103,6 +142,7 @@
                                     </div>
                                 </div>
                                 
+
                                 <div class="sorting-containers">
                                     <div class="sorting-container" id="even-container">
                                         <h5>Even Numbers</h5>
@@ -115,6 +155,7 @@
                                 </div>
                             </div>
                             
+
                             <div class="sorting-controls">
                                 <button id="check-sorting" class="check-btn">Check My Sorting</button>
                                 <button id="new-sorting-game" class="new-game-btn">New Numbers</button>
@@ -189,6 +230,8 @@
                     <button class="level-btn" data-level="6">Level 6: Properties</button>
                     <button class="level-btn" data-level="7">Level 7: Four Digits</button>
                     <button class="level-btn" data-level="8">Level 8: 4D Carrying</button>
+                    <button class="level-btn" data-level="9">Level 9: Missing Numbers</button>
+                    <button class="level-btn" data-level="10">Level 10: 4D Missing</button>
                 </div>
                 <p class="level-description" id="level-description">Select a level to start practicing addition!</p>
             </div>
@@ -210,6 +253,86 @@
             </div>
         </div>
 
+        <div id="subtraction-safari-module" class="module" style="display: none;">
+            <h3>Subtraction Safari</h3>
+            <div class="safari-intro">
+                <p>Welcome to the Subtraction Safari! Get ready for an exciting adventure through the jungles of subtraction!</p>
+                <img src="images/subtraction-safari.png" alt="Subtraction Safari" class="safari-image">
+            </div>
+            
+            <div id="safari-selection">
+                <h4>Choose Your Adventure Path:</h4>
+                <div class="safari-buttons">
+                    <button class="safari-btn" data-safari="1">Jungle Introduction</button>
+                    <button class="safari-btn" data-safari="2">Clear Path Trail</button>
+                    <button class="safari-btn" data-safari="3">Borrowing Bridge</button>
+                    <button class="safari-btn" data-safari="4">Safari Rules</button>
+                    <button class="safari-btn" data-safari="5">Jungle Problems</button>
+                    <button class="safari-btn" data-safari="6">Missing Paw Prints</button>
+                    <button class="safari-btn" data-safari="7">Mystery Numbers</button>
+                </div>
+                <p class="safari-description" id="safari-description">Select a trail to start your subtraction adventure!</p>
+            </div>
+            
+            <div id="current-safari-content" class="safari-content-container">
+                <!-- Content will be loaded here based on selection -->
+            </div>
+            
+            <div id="safari-practice-area" style="display: none;">
+                <h4>Practice Area</h4>
+                <div id="safari-problem"></div>
+                <div id="safari-input-area"></div>
+                <div class="safari-controls">
+                    <button id="check-safari" class="check-btn">Check Answer</button>
+                    <button id="safari-hint" class="hint-btn">Get Hint</button>
+                    <button id="new-safari-problem" class="new-game-btn">New Problem</button>
+                </div>
+                <div id="safari-feedback"></div>
+            </div>
+            
+            <div id="safari-badge-display" style="display: none;">
+                <h4>Your Safari Badges</h4>
+                <div class="badge-container">
+                    <!-- Badges will appear here as adventures are completed -->
+                </div>
+            </div>
+        </div>
+
+        <div id="money-market-module" class="module" style="display: none;">
+            <h3>Money Market</h3>
+            <div class="money-intro">
+                <p>Welcome to the Money Market! Learn all about coins, bills, and how to use money!</p>
+                <img src="images/money-market.png" alt="Money Market" class="money-image">
+            </div>
+            
+            <div id="money-selection">
+                <h4>Choose Your Money Activity:</h4>
+                <div class="money-buttons">
+                    <button class="money-btn" data-money="1">Coin Recognition</button>
+                    <button class="money-btn" data-money="2">Count The Money</button>
+                    <button class="money-btn" data-money="3">Making Change</button>
+                    <button class="money-btn" data-money="4">Shopping Fun</button>
+                </div>
+                <p class="money-description" id="money-description">Select an activity to start learning about money!</p>
+            </div>
+            
+            <div id="current-money-content" class="money-content-container">
+                <!-- Content will be loaded here based on selection -->
+            </div>
+            
+            <div id="money-practice-area" style="display: none;">
+                <h4>Practice Area</h4>
+                <div id="money-problem"></div>
+                <div id="money-input-area"></div>
+                <div class="money-controls">
+                    <button id="check-money" class="check-btn">Check Answer</button>
+                    <button id="money-hint" class="hint-btn">Get Hint</button>
+                    <button id="new-money-problem" class="new-game-btn">New Problem</button>
+                </div>
+                <div id="money-feedback"></div>
+            </div>
+        </div>
+
     </main>
 
     <footer>
@@ -222,7 +345,1108 @@
     <!-- Debug script (only active on localhost) -->
     <script src="debug.js"></script>
     
-    <!-- Use modules for better code organization -->
-    <script type="module" src="script.js"></script>
+    <!-- Module-specific scripts -->
+    <script src="js/number-sorter.js"></script>
+    
+    <!-- Main script (no module for better compatibility) -->
+    <script src="script.js"></script>
+    
+    <!-- Direct implementation of number sorting -->
+    <script>
+        // Immediately populate numbers when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Initializing number sorting functionality');
+            
+            // Elements
+            const numbersToSort = document.getElementById('numbers-to-sort');
+            const evenNumbers = document.getElementById('even-numbers');
+            const oddNumbers = document.getElementById('odd-numbers');
+            const checkSortingBtn = document.getElementById('check-sorting');
+            const newSortingBtn = document.getElementById('new-sorting-game');
+            const oddEvenBtn = document.querySelector('[data-activity="odd-even"]');
+            
+            // Check if elements exist
+            if (!numbersToSort || !evenNumbers || !oddNumbers) {
+                console.error('Required sorting elements not found');
+                return;
+            }
+            
+            // Immediately generate numbers
+            generateSortingNumbers();
+            
+            // Set up event listeners
+            if (checkSortingBtn) {
+                checkSortingBtn.addEventListener('click', checkSorting);
+            }
+            
+            if (newSortingBtn) {
+                newSortingBtn.addEventListener('click', generateSortingNumbers);
+            }
+            
+            if (oddEvenBtn) {
+                oddEvenBtn.addEventListener('click', function() {
+                    setTimeout(generateSortingNumbers, 100);
+                });
+            }
+            
+            // Generate random numbers for sorting
+            function generateSortingNumbers() {
+                console.log('Generating sorting numbers');
+                
+                // Clear previous numbers
+                numbersToSort.innerHTML = '';
+                evenNumbers.innerHTML = '';
+                oddNumbers.innerHTML = '';
+                
+                // Create 10 random numbers
+                for (let i = 0; i < 10; i++) {
+                    const num = Math.floor(Math.random() * 100) + 1;
+                    
+                    // Create number element
+                    const numEl = document.createElement('div');
+                    numEl.className = 'number-item';
+                    numEl.textContent = num;
+                    numEl.setAttribute('data-number', num);
+                    
+                    // Add click handler
+                    numEl.addEventListener('click', function() {
+                        const number = parseInt(this.getAttribute('data-number'));
+                        const isEven = number % 2 === 0;
+                        const targetContainer = isEven ? evenNumbers : oddNumbers;
+                        
+                        // Create copy in target container
+                        const numCopy = document.createElement('div');
+                        numCopy.className = 'number-item sorted';
+                        numCopy.textContent = number;
+                        numCopy.setAttribute('data-number', number);
+                        
+                        // Add click handler to return to source
+                        numCopy.addEventListener('click', function() {
+                            const originalNum = document.createElement('div');
+                            originalNum.className = 'number-item';
+                            originalNum.textContent = number;
+                            originalNum.setAttribute('data-number', number);
+                            originalNum.addEventListener('click', function() {
+                                const num = parseInt(this.getAttribute('data-number'));
+                                const isEven = num % 2 === 0;
+                                const container = isEven ? evenNumbers : oddNumbers;
+                                
+                                const numCopy = document.createElement('div');
+                                numCopy.className = 'number-item sorted';
+                                numCopy.textContent = num;
+                                numCopy.setAttribute('data-number', num);
+                                
+                                numCopy.addEventListener('click', function() {
+                                    this.remove();
+                                });
+                                
+                                container.appendChild(numCopy);
+                                this.remove();
+                            });
+                            
+                            numbersToSort.appendChild(originalNum);
+                            this.remove();
+                        });
+                        
+                        targetContainer.appendChild(numCopy);
+                        this.remove();
+                    });
+                    
+                    // Add to numbers grid
+                    numbersToSort.appendChild(numEl);
+                }
+            }
+            
+            // Check if sorting is correct
+            function checkSorting() {
+                console.log('Checking sorting');
+                let allCorrect = true;
+                
+                // Remove existing feedback
+                const existingFeedback = document.querySelector('.sorting-feedback');
+                if (existingFeedback) {
+                    existingFeedback.remove();
+                }
+                
+                // Check even container
+                const evenItems = evenNumbers.querySelectorAll('.number-item');
+                evenItems.forEach(item => {
+                    const number = parseInt(item.getAttribute('data-number'));
+                    if (number % 2 !== 0) { // Not even
+                        allCorrect = false;
+                        item.style.backgroundColor = 'var(--light-red)';
+                        item.style.borderColor = 'var(--rainbow-red)';
+                    } else {
+                        item.style.backgroundColor = 'var(--light-green)';
+                        item.style.borderColor = 'var(--rainbow-green)';
+                    }
+                });
+                
+                // Check odd container
+                const oddItems = oddNumbers.querySelectorAll('.number-item');
+                oddItems.forEach(item => {
+                    const number = parseInt(item.getAttribute('data-number'));
+                    if (number % 2 === 0) { // Not odd
+                        allCorrect = false;
+                        item.style.backgroundColor = 'var(--light-red)';
+                        item.style.borderColor = 'var(--rainbow-red)';
+                    } else {
+                        item.style.backgroundColor = 'var(--light-green)';
+                        item.style.borderColor = 'var(--rainbow-green)';
+                    }
+                });
+                
+                // Show feedback
+                const feedbackDiv = document.createElement('div');
+                feedbackDiv.className = 'sorting-feedback';
+                
+                if (allCorrect && (evenItems.length > 0 || oddItems.length > 0)) {
+                    feedbackDiv.classList.add('success');
+                    feedbackDiv.textContent = 'Great job! Your sorting is correct! 🎉';
+                } else {
+                    feedbackDiv.classList.add('error');
+                    feedbackDiv.textContent = 'Some numbers are not in the right place. Try again!';
+                }
+                
+                document.querySelector('.sorting-controls').appendChild(feedbackDiv);
+            }
+        });
+    </script>
+
+    <!-- Number Patterns Implementation -->
+    <script>
+        // Initialize Number Patterns functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Initializing number patterns functionality');
+            
+            // Elements
+            const patternSequence = document.getElementById('pattern-sequence');
+            const checkPatternBtn = document.getElementById('check-pattern');
+            const patternHintBtn = document.getElementById('pattern-hint');
+            const newPatternBtn = document.getElementById('new-pattern');
+            const patternFeedback = document.getElementById('pattern-feedback');
+            const numberPatternsBtn = document.querySelector('[data-activity="number-patterns"]');
+            
+            // Initialize when tab is clicked
+            if (numberPatternsBtn) {
+                numberPatternsBtn.addEventListener('click', function() {
+                    setTimeout(generatePattern, 100);
+                });
+            }
+            
+            // Current pattern data
+            let currentPattern = null;
+            
+            // Generate a pattern
+            function generatePattern() {
+                console.log('Generating number pattern');
+                
+                if (!patternSequence) {
+                    console.error('Pattern sequence element not found');
+                    return;
+                }
+                
+                patternFeedback.textContent = '';
+                patternFeedback.className = 'pattern-feedback';
+                
+                // Choose pattern type (add or subtract)
+                const operations = ['add', 'subtract'];
+                const operation = operations[Math.floor(Math.random() * operations.length)];
+                const increment = Math.floor(Math.random() * 8) + 2; // 2-10
+                
+                // Generate starting number
+                let start;
+                if (operation === 'add') {
+                    start = Math.floor(Math.random() * 20) + 1; // 1-20
+                } else {
+                    start = Math.floor(Math.random() * 50) + 30; // 30-80
+                }
+                
+                // Generate full sequence
+                const sequence = [];
+                let current = start;
+                
+                for (let i = 0; i < 7; i++) {
+                    sequence.push(current);
+                    
+                    if (operation === 'add') {
+                        current += increment;
+                    } else {
+                        current -= increment;
+                    }
+                }
+                
+                // Choose positions to hide (for user input)
+                const hiddenPositions = [];
+                while (hiddenPositions.length < 3) {
+                    const pos = Math.floor(Math.random() * 5) + 1; // Don't hide first or last
+                    if (!hiddenPositions.includes(pos)) {
+                        hiddenPositions.push(pos);
+                    }
+                }
+                
+                // Store pattern data
+                currentPattern = {
+                    sequence: sequence,
+                    hiddenPositions: hiddenPositions,
+                    operation: operation,
+                    increment: increment
+                };
+                
+                // Display the pattern
+                displayPattern();
+            }
+            
+            // Display pattern with input fields for hidden positions
+            function displayPattern() {
+                patternSequence.innerHTML = '';
+                
+                for (let i = 0; i < currentPattern.sequence.length; i++) {
+                    const item = document.createElement('div');
+                    item.className = 'pattern-item';
+                    
+                    if (currentPattern.hiddenPositions.includes(i)) {
+                        const input = document.createElement('input');
+                        input.type = 'number';
+                        input.className = 'pattern-input';
+                        input.placeholder = '?';
+                        input.dataset.position = i;
+                        item.appendChild(input);
+                    } else {
+                        item.textContent = currentPattern.sequence[i];
+                    }
+                    
+                    patternSequence.appendChild(item);
+                }
+            }
+            
+            // Check user answers
+            function checkAnswers() {
+                const inputs = patternSequence.querySelectorAll('.pattern-input');
+                let allCorrect = true;
+                
+                inputs.forEach(input => {
+                    const position = parseInt(input.dataset.position);
+                    const userAnswer = parseInt(input.value);
+                    const correctAnswer = currentPattern.sequence[position];
+                    
+                    if (userAnswer === correctAnswer) {
+                        input.style.backgroundColor = 'var(--light-green)';
+                        input.style.borderColor = 'var(--rainbow-green)';
+                    } else {
+                        input.style.backgroundColor = 'var(--light-red)';
+                        input.style.borderColor = 'var(--rainbow-red)';
+                        allCorrect = false;
+                    }
+                });
+                
+                // Show feedback
+                if (allCorrect && inputs.length > 0) {
+                    patternFeedback.textContent = 'Great job! You found the pattern! 🎉';
+                    patternFeedback.className = 'pattern-feedback success';
+                } else {
+                    patternFeedback.textContent = 'Some answers are incorrect. Try again!';
+                    patternFeedback.className = 'pattern-feedback error';
+                }
+            }
+            
+            // Show hint
+            function showHint() {
+                let hintText = '';
+                
+                if (currentPattern.operation === 'add') {
+                    hintText = `This pattern adds ${currentPattern.increment} each time.`;
+                } else {
+                    hintText = `This pattern subtracts ${currentPattern.increment} each time.`;
+                }
+                
+                patternFeedback.textContent = hintText;
+                patternFeedback.className = 'pattern-feedback hint';
+            }
+            
+            // Set up event listeners
+            if (checkPatternBtn) {
+                checkPatternBtn.addEventListener('click', checkAnswers);
+            }
+            
+            if (patternHintBtn) {
+                patternHintBtn.addEventListener('click', showHint);
+            }
+            
+            if (newPatternBtn) {
+                newPatternBtn.addEventListener('click', generatePattern);
+            }
+            
+            // Also initialize when Number Friends module is loaded
+            const numberFriendsBtn = document.getElementById('btn-number-friends');
+            if (numberFriendsBtn) {
+                numberFriendsBtn.addEventListener('click', function() {
+                    setTimeout(function() {
+                        const patternActivity = document.getElementById('number-patterns-activity');
+                        if (patternActivity && patternActivity.classList.contains('active')) {
+                            generatePattern();
+                        }
+                    }, 200);
+                });
+            }
+        });
+    </script>
+    
+    <!-- Place Value Implementation -->
+    <script>
+        // Initialize Place Value functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Initializing place value functionality');
+            
+            // Elements
+            const placeValueNumber = document.getElementById('place-value-number');
+            const analyzeBtn = document.getElementById('analyze-number');
+            const hundredsValue = document.getElementById('hundreds-value');
+            const tensValue = document.getElementById('tens-value');
+            const onesValue = document.getElementById('ones-value');
+            const hundredsBlocks = document.getElementById('hundreds-blocks');
+            const tensBlocks = document.getElementById('tens-blocks');
+            const onesBlocks = document.getElementById('ones-blocks');
+            const expandedForm = document.getElementById('expanded-form');
+            const placeValueBtn = document.querySelector('[data-activity="place-value"]');
+            
+            // Initialize when tab is clicked
+            if (placeValueBtn) {
+                placeValueBtn.addEventListener('click', function() {
+                    setTimeout(function() {
+                        analyzePlaceValue();
+                    }, 100);
+                });
+            }
+            
+            // Set up analyze button
+            if (analyzeBtn) {
+                analyzeBtn.addEventListener('click', analyzePlaceValue);
+            }
+            
+            // Analyze place value of the number
+            function analyzePlaceValue() {
+                console.log('Analyzing place value');
+                
+                // Get the number (ensure it's 3 digits or less)
+                let number = parseInt(placeValueNumber.value) || 0;
+                if (number > 999) {
+                    number = 999;
+                    placeValueNumber.value = 999;
+                }
+                
+                // Extract digits
+                const hundreds = Math.floor(number / 100);
+                const tens = Math.floor((number % 100) / 10);
+                const ones = number % 10;
+                
+                // Update place values
+                hundredsValue.textContent = hundreds;
+                tensValue.textContent = tens;
+                onesValue.textContent = ones;
+                
+                // Update expanded form
+                let expandedText = '';
+                if (hundreds > 0) {
+                    expandedText += `${hundreds} × 100`;
+                    if (tens > 0 || ones > 0) expandedText += ' + ';
+                }
+                if (tens > 0) {
+                    expandedText += `${tens} × 10`;
+                    if (ones > 0) expandedText += ' + ';
+                }
+                if (ones > 0 || (hundreds === 0 && tens === 0)) {
+                    expandedText += `${ones} × 1`;
+                }
+                expandedForm.textContent = expandedText;
+                
+                // Create visual blocks
+                createBlocks(hundredsBlocks, 'hundred-block', hundreds, 'H');
+                createBlocks(tensBlocks, 'ten-block', tens, 'T');
+                createBlocks(onesBlocks, 'one-block', ones, 'O');
+            }
+            
+            // Create visual blocks for place value
+            function createBlocks(container, blockClass, count, label) {
+                container.innerHTML = '';
+                
+                for (let i = 0; i < count; i++) {
+                    const block = document.createElement('div');
+                    block.className = blockClass;
+                    block.textContent = label;
+                    container.appendChild(block);
+                }
+            }
+            
+            // Also initialize when Number Friends module is loaded
+            const numberFriendsBtn = document.getElementById('btn-number-friends');
+            if (numberFriendsBtn) {
+                numberFriendsBtn.addEventListener('click', function() {
+                    setTimeout(function() {
+                        const placeValueActivity = document.getElementById('place-value-activity');
+                        if (placeValueActivity && placeValueActivity.classList.contains('active')) {
+                            analyzePlaceValue();
+                        }
+                    }, 200);
+                });
+            }
+            
+            // Analyze initial value
+            if (placeValueNumber && placeValueNumber.value) {
+                setTimeout(analyzePlaceValue, 500);
+            }
+        });
+    </script>
+
+    <!-- Level 4 Button Fix -->
+    <script src="direct-level4.js"></script>
+    
+    <!-- Level debugging script -->
+    <script src="level-debug.js"></script>
+    
+    <!-- Direct implementations for Level 9 and Level 10 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Setting up direct implementations for Levels 9 and 10');
+            
+            // Find the Level 9 and Level 10 buttons
+            const level9Btn = document.querySelector('.level-btn[data-level="9"]');
+            const level10Btn = document.querySelector('.level-btn[data-level="10"]');
+            
+            // Direct implementation for Level 9
+            if (level9Btn) {
+                level9Btn.addEventListener('click', function() {
+                    console.log('Level 9 button clicked - loading direct implementation');
+                    
+                    // First try to fetch the content HTML
+                    fetch('content/addition-adventure/level9.html')
+                        .then(response => {
+                            if (!response.ok) throw new Error('Level 9 content not found');
+                            return response.text();
+                        })
+                        .then(html => {
+                            document.getElementById('current-addition-problem').innerHTML = html;
+                            document.getElementById('level-description').textContent = "Practice finding missing numbers in addition problems";
+                            
+
+                            // Connect start button with direct implementation
+                            setTimeout(() => {
+                                const startBtn = document.getElementById('start-practice');
+                                if (startBtn) {
+                                    startBtn.addEventListener('click', function() {
+                                        console.log('Level 9 - Start practice clicked');
+                                        directLevel9Practice();
+                                    });
+                                }
+                            }, 300);
+                        })
+                        .catch(error => {
+                            console.error('Error loading Level 9:', error);
+                            document.getElementById('current-addition-problem').innerHTML = 
+                                '<div class="error-message">Unable to load Level 9 content. Please check the console for details.</div>';
+                        });
+                });
+            }
+            
+            // Direct implementation for Level 10
+            if (level10Btn) {
+                level10Btn.addEventListener('click', function() {
+                    console.log('Level 10 button clicked - loading direct implementation');
+                    
+                    // First try to fetch the content HTML
+                    fetch('content/addition-adventure/level10.html')
+                        .then(response => {
+                            if (!response.ok) throw new Error('Level 10 content not found');
+                            return response.text();
+                        })
+                        .then(html => {
+                            document.getElementById('current-addition-problem').innerHTML = html;
+                            document.getElementById('level-description').textContent = "Practice finding missing numbers in 4-digit addition problems";
+                            
+
+                            // Connect start button with direct implementation
+                            setTimeout(() => {
+                                const startBtn = document.getElementById('start-practice');
+                                if (startBtn) {
+                                    startBtn.addEventListener('click', function() {
+                                        console.log('Level 10 - Start practice clicked');
+                                        directLevel10Practice();
+                                    });
+                                }
+                            }, 300);
+                        })
+                        .catch(error => {
+                            console.error('Error loading Level 10:', error);
+                            document.getElementById('current-addition-problem').innerHTML = 
+                                '<div class="error-message">Unable to load Level 10 content. Please check the console for details.</div>';
+                        });
+                });
+            }
+            
+            // Direct implementation of Level 9 practice
+            function directLevel9Practice() {
+                // Get essential elements
+                const problemContainer = document.getElementById('current-addition-problem');
+                const inputArea = document.getElementById('input-area');
+                const feedbackArea = document.getElementById('feedback-area');
+                
+                console.log('Starting direct Level 9 Practice with:', {
+                    problemContainer: !!problemContainer,
+                    inputArea: !!inputArea, 
+                    feedbackArea: !!feedbackArea
+                });
+                
+                // Simple state management
+                let questionCount = 0;
+                let score = 0;
+                let currentProblem = null;
+                
+                // Generate first problem
+                generateMissingDigitProblem();
+                
+                // Generate a missing digit problem
+                function generateMissingDigitProblem() {
+                    // Clear previous feedback
+                    feedbackArea.innerHTML = '';
+                    
+                    // Hide hint container if exists
+                    const hintContainer = document.getElementById('hint-container');
+                    if (hintContainer) hintContainer.style.display = 'none';
+                    
+                    // Generate two-digit numbers for the problem
+                    const num1 = Math.floor(Math.random() * 90) + 10; // 10-99
+                    const num2 = Math.floor(Math.random() * 90) + 10; // 10-99
+                    const sum = num1 + num2;
+                    
+                    // Convert numbers to strings for digit manipulation
+                    const num1Str = num1.toString();
+                    const num2Str = num2.toString();
+                    const sumStr = sum.toString();
+                    
+                    // Decide which number will have the missing digit (1=first number, 2=second number, 3=sum)
+                    const missingIn = Math.floor(Math.random() * 3) + 1;
+                    
+                    // Decide which position to hide (0=tens, 1=ones)
+                    let digitPosition = Math.floor(Math.random() * 2);
+                    
+                    // Set up the problem
+                    let num1Display = num1Str;
+                    let num2Display = num2Str;
+                    let sumDisplay = sumStr;
+                    let missingDigit = null;
+                    let missingPosition = '';
+                    
+                    if (missingIn === 1) {
+                        // Missing digit in first number
+                        missingDigit = num1Str[digitPosition];
+                        num1Display = digitPosition === 0 
+                            ? `<span class="missing-box">?</span>${num1Str[1]}` 
+                            : `${num1Str[0]}<span class="missing-box">?</span>`;
+                        missingPosition = digitPosition === 0 ? 'tens' : 'ones';
+                    } else if (missingIn === 2) {
+                        // Missing digit in second number
+                        missingDigit = num2Str[digitPosition];
+                        num2Display = digitPosition === 0
+                            ? `<span class="missing-box">?</span>${num2Str[1]}`
+                            : `${num2Str[0]}<span class="missing-box">?</span>`;
+                        missingPosition = digitPosition === 0 ? 'tens' : 'ones';
+                    } else {
+                        // Missing digit in sum
+                        // For sums, we'll try to hide a non-zero digit if possible
+                        if (sumStr.length > 2) {
+                            // Three-digit sum - pick from tens or ones
+                            const validPositions = [1, 2]; // Positions where digits might not be 0
+                            digitPosition = validPositions[Math.floor(Math.random() * validPositions.length)];
+                            missingDigit = sumStr[digitPosition];
+                            let tempSum = sumStr.split('');
+                            tempSum[digitPosition] = '?';
+                            sumDisplay = tempSum.join('');
+                            missingPosition = digitPosition === 1 ? 'tens' : 'ones';
+                        } else {
+                            // Two-digit sum - same as before
+                            missingDigit = sumStr[digitPosition];
+                            sumDisplay = digitPosition === 0
+                                ? `<span class="missing-box">?</span>${sumStr[1]}`
+                                : `${sumStr[0]}<span class="missing-box">?</span>`;
+                            missingPosition = digitPosition === 0 ? 'tens' : 'ones';
+                        }
+                    }
+                    
+                    // Save current problem
+                    currentProblem = {
+                        num1: num1,
+                        num2: num2,
+                        sum: sum,
+                        missingDigit: parseInt(missingDigit),
+                        missingIn: missingIn,
+                        digitPosition: digitPosition,
+                        missingPosition: missingPosition
+                    };
+                    
+                    // Update question counter
+                    questionCount++;
+                    
+                    // Display the problem
+                    problemContainer.innerHTML = `
+                        <div class="problem-container">
+                            <div class="progress-tracker">
+                                <div class="score-display">Score: <span id="score-value">${score}</span> points</div>
+                                <div class="question-counter">Question <span id="current-question">${questionCount}</span> of <span id="total-questions">10</span></div>
+                            </div>
+                            <h4>Find the missing digit:</h4>
+                            <div class="missing-digit-problem">
+                                ${num1Display} + ${num2Display} = ${sumDisplay}
+                            </div>
+                        </div>
+                    `;
+                    
+                    // Create input area
+                    inputArea.innerHTML = `
+                        <div class="answer-container">
+                            <label for="user-answer">Enter the missing digit (0-9):</label>
+                            <input type="number" id="user-answer" class="answer-input" min="0" max="9">
+                            <button id="check-answer" class="check-btn">Check Answer</button>
+                        </div>
+                        <button id="show-hint" class="hint-btn">Show Hint</button>
+                    `;
+                    
+                    // Setup event listeners
+                    document.getElementById('check-answer').addEventListener('click', checkAnswer);
+                    document.getElementById('user-answer').addEventListener('keyup', function(event) {
+                        if (event.key === "Enter") checkAnswer();
+                    });
+                    document.getElementById('show-hint').addEventListener('click', showHint);
+                    
+                    // Focus on the answer input
+                    document.getElementById('user-answer').focus();
+                }
+                
+                // Check the user's answer
+                function checkAnswer() {
+                    const userAnswer = parseInt(document.getElementById('user-answer').value);
+                    
+                    if (isNaN(userAnswer) || userAnswer < 0 || userAnswer > 9) {
+                        feedbackArea.innerHTML = '<p class="error">Please enter a digit between 0 and 9!</p>';
+                        return;
+                    }
+                    
+                    if (userAnswer === currentProblem.missingDigit) {
+                        // Correct answer
+                        score += 10;
+                        document.getElementById('score-value').textContent = score;
+                        
+                        // Create explanation text based on missing position
+                        let explanationText = '';
+                        if (currentProblem.missingIn === 1) {
+                            const fullNum = currentProblem.digitPosition === 0 
+                                ? `${currentProblem.missingDigit}${currentProblem.num1 % 10}` 
+                                : `${Math.floor(currentProblem.num1 / 10)}${currentProblem.missingDigit}`;
+                            explanationText = `${fullNum} + ${currentProblem.num2} = ${currentProblem.sum}`;
+                        } else if (currentProblem.missingIn === 2) {
+                            const fullNum = currentProblem.digitPosition === 0 
+                                ? `${currentProblem.missingDigit}${currentProblem.num2 % 10}` 
+                                : `${Math.floor(currentProblem.num2 / 10)}${currentProblem.missingDigit}`;
+                            explanationText = `${currentProblem.num1} + ${fullNum} = ${currentProblem.sum}`;
+                        } else {
+                            const sumDigits = currentProblem.sum.toString().split('');
+                            const position = currentProblem.digitPosition;
+                            explanationText = `${currentProblem.num1} + ${currentProblem.num2} = ${currentProblem.sum}`;
+                        }
+                        
+                        feedbackArea.innerHTML = `
+                            <div class="success-feedback">
+                                <p class="success">Correct! ${currentProblem.missingDigit} is right! 🎉</p>
+                                <p>${explanationText}</p>
+                                <p>You earned 10 points!</p>
+                            </div>
+                        `;
+                        
+                        // Check if we've completed all questions
+                        if (questionCount >= 10) {
+                            showFinalResults();
+                        } else {
+                            // Next question button
+                            feedbackArea.innerHTML += `
+                                <button id="next-question" class="next-btn">Next Question</button>
+                            `;
+                            document.getElementById('next-question').addEventListener('click', generateMissingDigitProblem);
+                        }
+                    } else {
+                        // Incorrect answer
+                        feedbackArea.innerHTML = `
+                            <p class="error">Not quite right. Try again!</p>
+                            <p>Hint: Check your calculation carefully.</p>
+                        `;
+                    }
+                }
+                
+                // Show a hint for the current problem
+                function showHint() {
+                    // Get hint container or create if not exists
+                    let hintContainer = document.getElementById('hint-container');
+                    if (!hintContainer) {
+                        hintContainer = document.createElement('div');
+                        hintContainer.id = 'hint-container';
+                        document.getElementById('visual-tools').appendChild(hintContainer);
+                    }
+                    
+                    let hintContent = '';
+                    if (currentProblem.missingIn === 1 || currentProblem.missingIn === 2) {
+                        // Missing digit in one of the addends
+                        hintContent = `
+                            <p>To find the missing digit:</p>
+                            <ol>
+                                <li>Calculate what the number with the missing digit should be.</li>
+                                <li>Look at the ${currentProblem.missingPosition} place of that number.</li>
+                            </ol>
+                        `;
+                    } else {
+                        // Missing digit in sum
+                        hintContent = `
+                            <p>To find the missing digit:</p>
+                            <ol>
+                                <li>Add the two numbers together.</li>
+                                <li>Look at the ${currentProblem.missingPosition} place of the answer.</li>
+                            </ol>
+                        `;
+                    }
+                    
+                    hintContainer.style.display = 'block';
+                    hintContainer.innerHTML = `
+                        <h5>Hint</h5>
+                        <div id="hint-content">
+                            ${hintContent}
+                        </div>
+                    `;
+                }
+                
+                // Show final results
+                function showFinalResults() {
+                    const percentage = Math.floor((score / 100) * 100);
+                    
+                    problemContainer.innerHTML = '';
+                    inputArea.innerHTML = '';
+                    
+                    feedbackArea.innerHTML = `
+                        <div class="final-results">
+                            <h3>Level Complete! 🏆</h3>
+                            <div class="results-content">
+                                <p>Great job! You've completed Level 9: Missing Digit Addition</p>
+                                <div class="score-summary">
+                                    <p>Your score: <strong>${score}</strong> points out of 100 possible</p>
+                                    <p>Percentage: <strong>${percentage}%</strong></p>
+                                </div>
+                                <div class="stars-earned">
+                                    ${percentage >= 90 ? '⭐⭐⭐' : percentage >= 70 ? '⭐⭐' : percentage >= 50 ? '⭐' : 'Keep practicing!' }
+                                </div>
+                            </div>
+                            <button id="retry-level" class="retry-btn">Try Again</button>
+                            <button id="return-to-menu" class="menu-btn">Return to Level Menu</button>
+                        </div>
+                    `;
+                    
+                    document.getElementById('retry-level').addEventListener('click', function() {
+                        // Reset and start over
+                        questionCount = 0;
+                        score = 0;
+                        generateMissingDigitProblem();
+                    });
+                    
+                    document.getElementById('return-to-menu').addEventListener('click', function() {
+                        // Clear areas
+                        problemContainer.innerHTML = '';
+                        inputArea.innerHTML = '';
+                        feedbackArea.innerHTML = '';
+                    });
+                }
+            }
+            
+            // Direct implementation of Level 10 practice
+            function directLevel10Practice() {
+                // Get essential elements
+                const problemContainer = document.getElementById('current-addition-problem');
+                const inputArea = document.getElementById('input-area');
+                const feedbackArea = document.getElementById('feedback-area');
+                
+                console.log('Starting direct Level 10 Practice with:', {
+                    problemContainer: !!problemContainer,
+                    inputArea: !!inputArea, 
+                    feedbackArea: !!feedbackArea
+                });
+                
+                // Simple state management
+                let questionCount = 0;
+                let score = 0;
+                let currentProblem = null;
+                
+                // Generate first problem
+                generate4DMissingDigitProblem();
+                
+                // Generate a 4-digit missing digit problem
+                function generate4DMissingDigitProblem() {
+                    // Clear previous feedback
+                    feedbackArea.innerHTML = '';
+                    
+                    // Hide hint container if exists
+                    const hintContainer = document.getElementById('hint-container');
+                    if (hintContainer) hintContainer.style.display = 'none';
+                    
+                    // Generate four-digit numbers for the problem
+                    const num1 = Math.floor(Math.random() * 9000) + 1000; // 1000-9999
+                    const num2 = Math.floor(Math.random() * 9000) + 1000; // 1000-9999
+                    const sum = num1 + num2;
+                    
+                    // Convert numbers to strings for digit manipulation
+                    const num1Str = num1.toString();
+                    const num2Str = num2.toString();
+                    const sumStr = sum.toString();
+                    
+                    // Decide which number will have the missing digit (1=first number, 2=second number, 3=sum)
+                    const missingIn = Math.floor(Math.random() * 3) + 1;
+                    
+                    // Decide which position to hide (0=thousands, 1=hundreds, 2=tens, 3=ones)
+                    let digitPosition = Math.floor(Math.random() * 4);
+                    
+                    // Set up the problem
+                    let num1Display = num1Str;
+                    let num2Display = num2Str;
+                    let sumDisplay = sumStr;
+                    let missingDigit = null;
+                    let missingPosition = '';
+                    
+                    if (missingIn === 1) {
+                        // Missing digit in first number
+                        missingDigit = num1Str[digitPosition];
+                        num1Display = num1Str.substring(0, digitPosition) + 
+                                      `<span class="missing-box">?</span>` + 
+                                      num1Str.substring(digitPosition + 1);
+                        
+                        // Set position name
+                        switch(digitPosition) {
+                            case 0: missingPosition = 'thousands'; break;
+                            case 1: missingPosition = 'hundreds'; break;
+                            case 2: missingPosition = 'tens'; break;
+                            case 3: missingPosition = 'ones'; break;
+                        }
+                    } else if (missingIn === 2) {
+                        // Missing digit in second number
+                        missingDigit = num2Str[digitPosition];
+                        num2Display = num2Str.substring(0, digitPosition) + 
+                                      `<span class="missing-box">?</span>` + 
+                                      num2Str.substring(digitPosition + 1);
+                        
+                        // Set position name
+                        switch(digitPosition) {
+                            case 0: missingPosition = 'thousands'; break;
+                            case 1: missingPosition = 'hundreds'; break;
+                            case 2: missingPosition = 'tens'; break;
+                            case 3: missingPosition = 'ones'; break;
+                        }
+                    } else {
+                        // Missing digit in sum
+                        missingDigit = sumStr[digitPosition];
+                        sumDisplay = sumStr.substring(0, digitPosition) + 
+                                     `<span class="missing-box">?</span>` + 
+                                     sumStr.substring(digitPosition + 1);
+                        
+                        // Set position name
+                        switch(digitPosition) {
+                            case 0: missingPosition = 'thousands'; break;
+                            case 1: missingPosition = 'hundreds'; break;
+                            case 2: missingPosition = 'tens'; break;
+                            case 3: missingPosition = 'ones'; break;
+                        }
+                    }
+                    
+                    // Save current problem
+                    currentProblem = {
+                        num1: num1,
+                        num2: num2,
+                        sum: sum,
+                        missingDigit: parseInt(missingDigit),
+                        missingIn: missingIn,
+                        digitPosition: digitPosition,
+                        missingPosition: missingPosition
+                    };
+                    
+                    // Update question counter
+                    questionCount++;
+                    
+                    // Display the problem
+                    problemContainer.innerHTML = `
+                        <div class="problem-container">
+                            <div class="progress-tracker">
+                                <div class="score-display">Score: <span id="score-value">${score}</span> points</div>
+                                <div class="question-counter">Question <span id="current-question">${questionCount}</span> of <span id="total-questions">10</span></div>
+                            </div>
+                            <h4>Find the missing digit:</h4>
+                            <div class="missing-digit-problem">
+                                ${num1Display} + ${num2Display} = ${sumDisplay}
+                            </div>
+                        </div>
+                    `;
+                    
+                    // Create input area
+                    inputArea.innerHTML = `
+                        <div class="answer-container">
+                            <label for="user-answer">Enter the missing digit (0-9):</label>
+                            <input type="number" id="user-answer" class="answer-input" min="0" max="9">
+                            <button id="check-answer" class="check-btn">Check Answer</button>
+                        </div>
+                        <button id="show-hint" class="hint-btn">Show Hint</button>
+                    `;
+                    
+                    // Setup event listeners
+                    document.getElementById('check-answer').addEventListener('click', checkAnswer);
+                    document.getElementById('user-answer').addEventListener('keyup', function(event) {
+                        if (event.key === "Enter") checkAnswer();
+                    });
+                    document.getElementById('show-hint').addEventListener('click', showHint);
+                    
+                    // Focus on the answer input
+                    document.getElementById('user-answer').focus();
+                }
+                
+                // Check the user's answer
+                function checkAnswer() {
+                    const userAnswer = parseInt(document.getElementById('user-answer').value);
+                    
+                    if (isNaN(userAnswer) || userAnswer < 0 || userAnswer > 9) {
+                        feedbackArea.innerHTML = '<p class="error">Please enter a digit between 0 and 9!</p>';
+                        return;
+                    }
+                    
+                    if (userAnswer === currentProblem.missingDigit) {
+                        // Correct answer
+                        score += 10;
+                        document.getElementById('score-value').textContent = score;
+                        
+                        // Create explanation text based on missing position
+                        let explanationText = '';
+                        if (currentProblem.missingIn === 1) {
+                            // Replace the missing digit in the first number
+                            let fullNum = currentProblem.num1.toString();
+                            explanationText = `${fullNum} + ${currentProblem.num2} = ${currentProblem.sum}`;
+                        } else if (currentProblem.missingIn === 2) {
+                            // Replace the missing digit in the second number
+                            let fullNum = currentProblem.num2.toString();
+                            explanationText = `${currentProblem.num1} + ${fullNum} = ${currentProblem.sum}`;
+                        } else {
+                            // Replace the missing digit in the sum
+                            let fullNum = currentProblem.sum.toString();
+                            explanationText = `${currentProblem.num1} + ${currentProblem.num2} = ${fullNum}`;
+                        }
+                        
+                        feedbackArea.innerHTML = `
+                            <div class="success-feedback">
+                                <p class="success">Correct! ${currentProblem.missingDigit} is right! 🎉</p>
+                                <p>${explanationText}</p>
+                                <p>You earned 10 points!</p>
+                            </div>
+                        `;
+                        
+                        // Check if we've completed all questions
+                        if (questionCount >= 10) {
+                            showFinalResults();
+                        } else {
+                            // Next question button
+                            feedbackArea.innerHTML += `
+                                <button id="next-question" class="next-btn">Next Question</button>
+                            `;
+                            document.getElementById('next-question').addEventListener('click', generate4DMissingDigitProblem);
+                        }
+                    } else {
+                        // Incorrect answer
+                        feedbackArea.innerHTML = `
+                            <p class="error">Not quite right. Try again!</p>
+                            <p>Hint: Check your addition and place values carefully.</p>
+                        `;
+                    }
+                }
+                
+                // Show a hint for the current problem
+                function showHint() {
+                    // Get hint container or create if not exists
+                    let hintContainer = document.getElementById('hint-container');
+                    if (!hintContainer) {
+                        hintContainer = document.createElement('div');
+                        hintContainer.id = 'hint-container';
+                        document.getElementById('visual-tools').appendChild(hintContainer);
+                    }
+                    
+                    let hintContent = '';
+                    if (currentProblem.missingIn === 1 || currentProblem.missingIn === 2) {
+                        // Missing digit in one of the addends
+                        hintContent = `
+                            <p>To find the missing digit:</p>
+                            <ol>
+                                <li>First, work out what the full 4-digit number should be.</li>
+                                <li>Then, look at the ${currentProblem.missingPosition} place of that number.</li>
+                                <li>Remember that in 4-digit numbers, each position represents a specific value (thousands, hundreds, tens, ones).</li>
+                            </ol>
+                        `;
+                    } else {
+                        // Missing digit in sum
+                        hintContent = `
+                            <p>To find the missing digit:</p>
+                            <ol>
+                                <li>Add the two 4-digit numbers together.</li>
+                                <li>Look at the ${currentProblem.missingPosition} place of the answer.</li>
+                                <li>Pay attention to any carrying that might affect this digit.</li>
+                            </ol>
+                        `;
+                    }
+                    
+                    hintContainer.style.display = 'block';
+                    hintContainer.innerHTML = `
+                        <h5>Hint</h5>
+                        <div id="hint-content">
+                            ${hintContent}
+                        </div>
+                    `;
+                }
+                
+                // Show final results
+                function showFinalResults() {
+                    const percentage = Math.floor((score / 100) * 100);
+                    
+                    problemContainer.innerHTML = '';
+                    inputArea.innerHTML = '';
+                    
+                    feedbackArea.innerHTML = `
+                        <div class="final-results">
+                            <h3>Level Complete! 🏆</h3>
+                            <div class="results-content">
+                                <p>Great job! You've completed Level 10: 4-Digit Missing Digit Addition</p>
+                                <div class="score-summary">
+                                    <p>Your score: <strong>${score}</strong> points out of 100 possible</p>
+                                    <p>Percentage: <strong>${percentage}%</strong></p>
+                                </div>
+                                <div class="stars-earned">
+                                    ${percentage >= 90 ? '⭐⭐⭐' : percentage >= 70 ? '⭐⭐' : percentage >= 50 ? '⭐' : 'Keep practicing!'}
+                                </div>
+                            </div>
+                            <button id="retry-level" class="retry-btn">Try Again</button>
+                            <button id="return-to-menu" class="menu-btn">Return to Level Menu</button>
+                        </div>
+                    `;
+                    
+                    document.getElementById('retry-level').addEventListener('click', function() {
+                        // Reset and start over
+                        questionCount = 0;
+                        score = 0;
+                        generate4DMissingDigitProblem();
+                    });
+                    
+                    document.getElementById('return-to-menu').addEventListener('click', function() {
+                        // Clear areas
+                        problemContainer.innerHTML = '';
+                        inputArea.innerHTML = '';
+                        feedbackArea.innerHTML = '';
+                    });
+                }
+            }
+        });
+    </script>
 </body>
 </html>

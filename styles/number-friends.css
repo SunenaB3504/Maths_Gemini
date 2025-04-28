@@ -1,0 +1,497 @@
+/* Number Friends Module Styling */
+
+/* Module Container */
+#number-friends-module {
+    padding: var(--spacing-lg);
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+}
+
+/* Activity Selector */
+.activity-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+    background-color: var(--light-red);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-lg);
+}
+
+#activity-container {
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Number Explorer Activity */
+.number-wheel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: var(--spacing-lg) 0;
+}
+
+.number-display {
+    font-size: 5rem;
+    font-weight: bold;
+    color: var(--rainbow-red);
+    margin-bottom: var(--spacing-sm);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.number-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+#current-number {
+    width: 60px;
+    text-align: center;
+    font-size: 1.2rem;
+    border: 2px solid var(--light-red);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-sm);
+}
+
+.number-visual-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    margin: var(--spacing-lg) 0;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.number-dot {
+    width: 15px;
+    height: 15px;
+    background-color: var(--rainbow-red);
+    border-radius: var(--border-radius-circle);
+}
+
+.number-properties {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+}
+
+.property-card {
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.property-card:nth-child(1) { background-color: var(--light-red); }
+.property-card:nth-child(2) { background-color: var(--light-orange); }
+.property-card:nth-child(3) { background-color: var(--light-green); }
+.property-card:nth-child(4) { background-color: var(--light-blue); }
+
+.property-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.property-card h5 {
+    margin-top: 0;
+    padding-bottom: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+}
+
+.property-card:nth-child(1) h5 { color: var(--dark-red); border-bottom: 1px solid var(--rainbow-red); }
+.property-card:nth-child(2) h5 { color: var(--dark-orange); border-bottom: 1px solid var(--rainbow-orange); }
+.property-card:nth-child(3) h5 { color: var(--dark-green); border-bottom: 1px solid var(--rainbow-green); }
+.property-card:nth-child(4) h5 { color: var(--dark-blue); border-bottom: 1px solid var(--rainbow-blue); }
+
+.property-value {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.property-card:nth-child(1) .property-value { color: var(--rainbow-red); }
+.property-card:nth-child(2) .property-value { color: var(--rainbow-orange); }
+.property-card:nth-child(3) .property-value { color: var(--rainbow-green); }
+.property-card:nth-child(4) .property-value { color: var(--rainbow-blue); }
+
+/* Odd & Even Activity */
+.sorting-game {
+    margin: var(--spacing-lg) 0;
+}
+
+.sorting-instructions {
+    background-color: var(--light-orange);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Sorting Game Styles */
+.sorting-area {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+}
+
+.sorting-numbers-container {
+    flex: 1;
+    min-width: 250px;
+}
+
+.numbers-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    background-color: var(--light-yellow);
+    border-radius: var(--border-radius-md);
+    min-height: 100px;
+}
+
+.sorting-containers {
+    flex: 2;
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.sorting-container {
+    flex: 1;
+    min-width: 120px;
+    padding: var(--spacing-sm);
+    min-height: 150px;
+    transition: all 0.3s ease;
+}
+
+#even-container {
+    background-color: var(--light-blue);
+    border-radius: var(--border-radius-md);
+}
+
+#odd-container {
+    background-color: var(--light-red);
+    border-radius: var(--border-radius-md);
+}
+
+#even-container h5, #odd-container h5 {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+    color: var(--white);
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: var(--spacing-xs);
+    border-radius: var(--border-radius-md);
+}
+
+/* Enhanced Number Item Styling */
+.number-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    background-color: white;
+    border: 2px solid var(--rainbow-blue);
+    border-radius: var(--border-radius-md);
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+.number-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+#numbers-to-sort {
+    min-height: 50px;
+    padding: 10px;
+    background-color: var(--light-yellow);
+    border-radius: var(--border-radius-md);
+}
+
+#even-numbers, #odd-numbers {
+    min-height: 100px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: var(--border-radius-md);
+}
+
+#even-container {
+    border: 2px dashed var(--rainbow-blue);
+    background-color: var(--light-blue);
+}
+
+#odd-container {
+    border: 2px dashed var(--rainbow-red);
+    background-color: var(--light-red);
+}
+
+.sorting-feedback {
+    margin-top: 15px;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: var(--border-radius-md);
+}
+
+.sorting-feedback.success {
+    background-color: var(--light-green);
+    color: var(--dark-green);
+}
+
+.sorting-feedback.error {
+    background-color: var(--light-red);
+    color: var(--dark-red);
+}
+
+/* Place Value Styling */
+.place-value-game {
+    padding: 15px;
+    background-color: var(--light-blue);
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+.number-input-container {
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.number-input-container label {
+    font-weight: bold;
+}
+
+#place-value-number {
+    width: 80px;
+    padding: 8px;
+    font-size: 16px;
+    border: 2px solid var(--rainbow-blue);
+    border-radius: 5px;
+}
+
+.analyze-btn {
+    background-color: var(--rainbow-purple);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.analyze-btn:hover {
+    background-color: var(--dark-purple);
+}
+
+.place-value-chart {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.place-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.place-header {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--dark-blue);
+}
+
+.place-value {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: var(--dark-purple);
+}
+
+.place-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.hundred-block {
+    width: 50px;
+    height: 50px;
+    background-color: var(--rainbow-blue);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.ten-block {
+    width: 40px;
+    height: 40px;
+    background-color: var(--rainbow-green);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.one-block {
+    width: 30px;
+    height: 30px;
+    background-color: var(--rainbow-red);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.expanded-form-container {
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.expanded-form-container h5 {
+    margin-top: 0;
+    color: var(--dark-blue);
+}
+
+#expanded-form {
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--dark-purple);
+}
+
+/* Number Patterns Styling */
+.pattern-game {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+    background-color: var(--light-yellow);
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+.pattern-instructions {
+    background-color: white;
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 6px solid var(--rainbow-blue);
+}
+
+.pattern-sequence {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.pattern-item {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border: 3px solid var(--rainbow-purple);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--dark-blue);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.pattern-input {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    font-size: 24px;
+    border: 2px dashed var(--rainbow-orange);
+    border-radius: 8px;
+    background-color: var(--lightest-blue);
+}
+
+.pattern-input:focus {
+    outline: none;
+    border: 2px solid var(--rainbow-blue);
+    box-shadow: 0 0 8px var(--rainbow-blue);
+}
+
+.pattern-input.correct {
+    background-color: var(--light-green);
+    border: 2px solid var(--rainbow-green);
+}
+
+.pattern-input.incorrect {
+    background-color: var(--light-red);
+    border: 2px solid var(--rainbow-red);
+}
+
+.pattern-feedback {
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.pattern-feedback.success {
+    background-color: var(--light-green);
+    color: var(--dark-green);
+}
+
+.pattern-feedback.error {
+    background-color: var(--light-red);
+    color: var(--dark-red);
+}
+
+.pattern-feedback.hint {
+    background-color: var(--light-yellow);
+    color: var(--dark-orange);
+    border: 2px dashed var(--rainbow-orange);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .number-properties {
+        grid-template-columns: 1fr;
+    }
+    
+    .sorting-area {
+        flex-direction: column;
+    }
+    
+    .sorting-containers {
+        flex-direction: column;
+    }
+    
+    .sorting-container {
+        margin-bottom: var(--spacing-md);
+    }
+}

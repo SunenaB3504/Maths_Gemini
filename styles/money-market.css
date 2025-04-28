@@ -1,0 +1,212 @@
+/* Money Market Module Styling */
+
+#money-market-module {
+    padding: var(--spacing-lg);
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+}
+
+/* Money Market Intro */
+.money-intro {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    background-color: var(--light-purple);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-lg);
+}
+
+.money-intro p {
+    font-size: 1.1rem;
+    flex: 1;
+    color: var(--dark-purple);
+}
+
+.money-image {
+    max-width: 200px;
+    margin-left: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Money Selection */
+#money-selection {
+    margin-bottom: var(--spacing-xl);
+    background: linear-gradient(135deg, var(--light-purple), var(--light-pink));
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.money-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin: var(--spacing-md) 0;
+}
+
+.money-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: linear-gradient(to right, var(--rainbow-purple), var(--rainbow-pink));
+    color: var(--white);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    min-width: 140px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.money-btn:hover {
+    background: linear-gradient(to right, var(--dark-purple), var(--dark-pink));
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.money-btn.active {
+    background: linear-gradient(to right, var(--dark-purple), var(--dark-pink));
+    color: var(--white);
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
+    transform: translateY(1px);
+}
+
+.money-description {
+    font-style: italic;
+    color: var(--dark-purple);
+    margin-top: var(--spacing-sm);
+}
+
+/* Money Content */
+.money-content-container {
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: 2px solid var(--light-purple);
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.money-content-container h1,
+.money-content-container h2,
+.money-content-container h3 {
+    color: var(--dark-purple);
+    border-bottom: 2px solid var(--light-purple);
+    padding-bottom: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Money Practice Area */
+#money-practice-area {
+    background-color: var(--light-purple);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    margin-top: var(--spacing-lg);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.money-controls {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin: var(--spacing-lg) 0;
+}
+
+/* Coin and Bill Displays */
+.coin-grid, .bill-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+    justify-content: center;
+}
+
+.coin, .bill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.coin:hover, .bill:hover {
+    transform: scale(1.1);
+}
+
+.coin img, .bill img {
+    border-radius: 50%;
+    border: 2px solid transparent;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.bill img {
+    border-radius: var(--border-radius-md);
+    width: 120px;
+    height: 60px;
+}
+
+.coin.selected img, .bill.selected img {
+    border-color: var(--rainbow-purple);
+    box-shadow: 0 0 10px var(--rainbow-purple);
+}
+
+.coin-value, .bill-value {
+    margin-top: var(--spacing-xs);
+    font-weight: bold;
+    color: var(--dark-purple);
+}
+
+/* Money Problem Styling */
+.money-problem {
+    background-color: var(--white);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    margin: var(--spacing-sm) 0;
+    border: 2px solid var(--light-purple);
+}
+
+.price-tag {
+    display: inline-block;
+    background: linear-gradient(to right, var(--rainbow-purple), var(--rainbow-pink));
+    color: var(--white);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 15px;
+    font-weight: bold;
+    margin: var(--spacing-xs);
+}
+
+.wallet {
+    background-color: var(--light-purple);
+    color: var(--dark-purple);
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-md);
+    margin: var(--spacing-md) 0;
+    display: inline-block;
+    border: 2px solid var(--rainbow-purple);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .money-buttons {
+        flex-direction: column;
+    }
+    
+    .money-btn {
+        width: 100%;
+    }
+    
+    .money-intro {
+        flex-direction: column;
+    }
+    
+    .money-image {
+        margin: var(--spacing-md) 0;
+        max-width: 100%;
+    }
+    
+    .coin-grid, .bill-grid {
+        gap: var(--spacing-sm);
+    }
+}

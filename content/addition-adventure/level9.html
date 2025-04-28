@@ -1,0 +1,137 @@
+<div class="level-content">
+    <h3>Level 9: Missing Digit Addition</h3>
+    
+    <div class="level-introduction">
+        <p>Welcome to a special addition challenge! 🎉</p>
+        <p>In this level, you'll solve addition problems with <strong>missing digits</strong>!</p>
+        <img src="images/addition-adventure/missing-digit.png" alt="Missing digit addition" class="level-image">
+    </div>
+    
+    <div class="concept-box">
+        <h4>What are Missing Digit Problems?</h4>
+        <p>In these special problems, one digit within a number is hidden. Your job is to figure out what digit belongs in the empty space.</p>
+        <p>Look for the <span class="missing-box">?</span> - that's your clue to find the missing digit!</p>
+        
+        <div class="missing-types">
+            <div class="missing-type">
+                <h5>Example 1: Missing Digit in First Number</h5>
+                <div class="missing-example">
+                    3<span class="missing-box">?</span> + 25 = 59
+                </div>
+                <div class="missing-solution">
+                    <p>To solve: We need to find what digit replaces the ? mark</p>
+                    <p>If ? = 4, then 34 + 25 = 59</p>
+                    <p>So the missing digit is 4</p>
+                </div>
+            </div>
+            
+            <div class="missing-type">
+                <h5>Example 2: Missing Digit in Second Number</h5>
+                <div class="missing-example">
+                    46 + 2<span class="missing-box">?</span> = 73
+                </div>
+                <div class="missing-solution">
+                    <p>To solve: We need to find what digit makes this addition correct</p>
+                    <p>46 + 27 = 73</p>
+                    <p>So the missing digit is 7</p>
+                </div>
+            </div>
+            
+            <div class="missing-type">
+                <h5>Example 3: Missing Digit in Sum</h5>
+                <div class="missing-example">
+                    37 + 45 = 8<span class="missing-box">?</span>
+                </div>
+                <div class="missing-solution">
+                    <p>To solve: Find the actual sum, then identify the missing digit</p>
+                    <p>37 + 45 = 82</p>
+                    <p>So the missing digit is 2</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="concept-box">
+        <h4>How to Solve Missing Digit Problems</h4>
+        <p>You can use these strategies to find the missing digit:</p>
+        <ul>
+            <li><strong>Calculate what you know:</strong> Solve the parts of the addition that you can.</li>
+            <li><strong>Work backward:</strong> If you know the sum and one complete addend, find what the other addend must be.</li>
+            <li><strong>Try different values:</strong> Test digits from 0-9 to see which one works.</li>
+        </ul>
+        
+        <div class="example-container">
+            <h5>Step-by-Step Example</h5>
+            <div class="step-by-step">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <p>Problem: 34 + 2<span class="missing-box">?</span> = 59</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <p>We know that 34 + 2? = 59</p>
+                        <p>The missing digit is in the ones place of the second number</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <p>First, let's find what the second number needs to be:</p>
+                        <p>34 + ? = 59</p>
+                        <p>? = 59 - 34 = 25</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <p>So the second number is 25</p>
+                        <p>Since we have 2?, the missing digit must be 5</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <p>Let's verify: 34 + 25 = 59 ✓</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="tips-box">
+        <h4>Tips for Missing Digit Problems</h4>
+        <ul>
+            <li><strong>Pay attention to place values:</strong> Note which place (ones, tens, hundreds) has the missing digit.</li>
+            <li><strong>Check your answer:</strong> Always substitute your digit back into the original problem to make sure it works.</li>
+            <li><strong>Consider carries:</strong> Remember that digits in one place can affect other places if there's carrying.</li>
+            <li><strong>Think step-by-step:</strong> Break down the problem into smaller parts to help find the missing digit.</li>
+        </ul>
+    </div>
+    
+    <div class="challenge-box">
+        <h4>Try These Warm-Up Problems</h4>
+        <div class="warm-up-problems">
+            <div class="warm-up-problem">
+                <p>1. 4<span class="missing-box">?</span> + 38 = 85</p>
+                <p class="solution"><span class="toggle-solution">Show Solution</span><span class="solution-content">The missing digit is 7 (47 + 38 = 85)</span></p>
+            </div>
+            <div class="warm-up-problem">
+                <p>2. 56 + 3<span class="missing-box">?</span> = 94</p>
+                <p class="solution"><span class="toggle-solution">Show Solution</span><span class="solution-content">The missing digit is 8 (56 + 38 = 94)</span></p>
+            </div>
+            <div class="warm-up-problem">
+                <p>3. 25 + 47 = <span class="missing-box">?</span>2</p>
+                <p class="solution"><span class="toggle-solution">Show Solution</span><span class="solution-content">The missing digit is 7 (25 + 47 = 72)</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="level-instructions">
+        <h4>Ready to Find the Missing Digits?</h4>
+        <p>You'll be given addition problems with a single missing digit. Figure out what digit is missing and type your answer!</p>
+        <button id="start-practice" class="start-btn">Start Practice!</button>
+    </div>
+</div>

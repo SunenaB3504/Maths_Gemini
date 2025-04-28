@@ -1,0 +1,1177 @@
+/* Addition Adventure Module Styling */
+
+#addition-adventure-module {
+    padding: var(--spacing-lg);
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+}
+
+/* Level Selection */
+#level-selection {
+    margin-bottom: var(--spacing-xl);
+    background-color: var(--light-orange);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.level-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin: var(--spacing-md) 0;
+}
+
+.level-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--white);
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    border-left: 3px solid var(--rainbow-orange);
+}
+
+.level-btn:hover {
+    background-color: var(--light-yellow);
+    transform: translateY(-2px);
+}
+
+.level-btn.active {
+    background-color: var(--rainbow-orange);
+    color: var(--white);
+}
+
+.level-description {
+    font-style: italic;
+    color: var(--dark-orange);
+    margin-top: var(--spacing-sm);
+}
+
+/* Level Content Styling */
+.level-content {
+    padding: 15px;
+    background-color: var(--light-yellow);
+    border-radius: 12px;
+    margin: 15px 0;
+}
+
+.level-introduction {
+    margin-bottom: 20px;
+}
+
+.level-image {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 10px 0;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.concept-box {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 5px solid var(--rainbow-blue);
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.example-container {
+    margin: 15px 0;
+}
+
+.addition-example {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.example-numbers {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--dark-blue);
+}
+
+.example-objects {
+    display: flex;
+    justify-content: center;
+}
+
+.object-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+}
+
+.tips-box {
+    background-color: var(--light-green);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.tips-box ul {
+    padding-left: 20px;
+}
+
+.tips-box li {
+    margin-bottom: 8px;
+}
+
+.fun-facts {
+    background-color: var(--light-purple);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    color: var(--dark-purple);
+}
+
+.level-instructions {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 5px solid var(--rainbow-orange);
+    margin-bottom: 20px;
+}
+
+.start-btn {
+    background-color: var(--rainbow-green);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: block;
+    margin: 20px auto 0;
+}
+
+.start-btn:hover {
+    background-color: var(--dark-green);
+}
+
+/* Problem Display Styling */
+.problem-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* Improved aligned addition problem display */
+.aligned-addition-problem {
+    display: inline-block;
+    text-align: right;
+    font-family: monospace;
+    font-size: 28px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.aligned-addition-problem.final {
+    background-color: var(--light-green);
+}
+
+.problem-row {
+    height: 40px;
+    line-height: 40px;
+    white-space: nowrap;
+    position: relative;
+}
+
+.problem-row.line {
+    height: 2px;
+    background-color: var(--dark-blue);
+    margin: 8px 0;
+}
+
+.problem-row .operator {
+    position: absolute;
+    left: -20px;
+}
+
+.digit {
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: var(--dark-blue);
+}
+
+.empty-digit {
+    display: inline-block;
+    width: 30px;
+}
+
+.digit.highlight {
+    color: var(--rainbow-green);
+    background-color: var(--lightest-green);
+    border-radius: 4px;
+}
+
+.carry-container {
+    position: relative;
+    height: 20px;
+}
+
+.carry {
+    position: absolute;
+    font-size: 16px;
+    color: var(--rainbow-red);
+    font-weight: bold;
+    top: 0;
+    right: 0;
+}
+
+/* Answer Area Styling */
+.answer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.answer-input {
+    padding: 10px;
+    font-size: 24px;
+    width: 80px;
+    text-align: center;
+    border: 2px solid var(--rainbow-blue);
+    border-radius: 8px;
+}
+
+/* Visual Block Builder */
+.blocks-visualization {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.block-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    max-width: 200px;
+}
+
+.block {
+    width: 25px;
+    height: 25px;
+    background-color: var(--rainbow-blue);
+    border-radius: 4px;
+}
+
+.block-group.total .block {
+    background-color: var(--rainbow-green);
+}
+
+.block-operator, .block-equals {
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+}
+
+/* Visual Tools */
+#visual-tools {
+    margin: var(--spacing-lg) 0;
+}
+
+#block-builder {
+    background-color: var(--light-orange);
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+}
+
+#hint-container {
+    background-color: var(--light-yellow);
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    border-left: 5px solid var(--rainbow-yellow);
+}
+
+/* Word Problem Styling */
+.steps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.step-box {
+    display: flex;
+    align-items: flex-start;
+    background-color: white;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.step-number {
+    width: 30px;
+    height: 30px;
+    background-color: var(--rainbow-blue);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.step-content h5 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: var(--dark-blue);
+}
+
+.step-content p {
+    margin: 0;
+}
+
+.word-problem {
+    background-color: var(--light-yellow);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 25px;
+}
+
+.problem-text {
+    font-size: 18px;
+    color: var(--dark-blue);
+    background-color: white;
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 5px solid var(--rainbow-orange);
+    margin-bottom: 15px;
+}
+
+.solution-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.solution-step {
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px 15px;
+}
+
+.solution-step h5 {
+    margin-top: 0;
+    color: var(--dark-blue);
+    border-bottom: 2px dotted var(--light-blue);
+    padding-bottom: 5px;
+}
+
+.answer {
+    font-weight: bold;
+    color: var(--dark-green);
+    font-size: 18px;
+    margin-top: 10px;
+    padding: 5px;
+    background-color: var(--lightest-green);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.word-problem-container {
+    background-color: var(--light-yellow);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.word-problem-text {
+    font-size: 18px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 5px solid var(--rainbow-orange);
+}
+
+.problem-workspace {
+    margin-top: 15px;
+}
+
+.number-sentence {
+    background-color: var(--lightest-blue);
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.unit-label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.work-btn {
+    background-color: var(--rainbow-purple);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 15px;
+    margin: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.work-btn:hover {
+    background-color: var(--dark-purple);
+}
+
+.work-solution {
+    background-color: var(--light-yellow);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Addition Example Formatting */
+.addition-table {
+    border-collapse: collapse;
+    margin: 15px auto;
+    font-size: 24px;
+    font-family: monospace;
+}
+
+.addition-table td {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.digit {
+    font-weight: bold;
+}
+
+.tens {
+    color: var(--dark-blue);
+}
+
+.ones {
+    color: var(--dark-purple);
+}
+
+.carry {
+    color: var(--rainbow-red);
+    font-size: 16px;
+    position: relative;
+    top: 2px;
+}
+
+.operation {
+    color: var(--dark-green);
+    font-weight: bold;
+}
+
+.result-line hr {
+    height: 2px;
+    background-color: var(--dark-blue);
+    border: none;
+}
+
+.result {
+    color: var(--rainbow-green);
+}
+
+.empty-cell {
+    width: 20px;
+}
+
+.explanation {
+    background-color: var(--light-yellow);
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.explanation p {
+    margin: 5px 0;
+}
+
+/* Kid-friendly Addition Examples */
+.kid-friendly-addition {
+    margin: 20px 0;
+}
+
+.addition-steps {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    padding: 15px;
+    border-radius: 12px;
+    background-color: var(--light-yellow);
+}
+
+.step-explanation {
+    flex: 1;
+    padding-right: 15px;
+}
+
+.step-explanation p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.step-explanation strong {
+    color: var(--dark-blue);
+}
+
+.step-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.simple-addition-table {
+    border-collapse: collapse;
+    font-family: monospace;
+    font-size: 28px;
+    margin: 0 auto;
+}
+
+.simple-addition-table td {
+    width: 40px;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+}
+
+.simple-addition-table .digit {
+    font-weight: bold;
+    color: var(--dark-blue);
+}
+
+.simple-addition-table .highlight {
+    color: var(--rainbow-green);
+    font-weight: bold;
+}
+
+.simple-addition-table .carry {
+    position: absolute;
+    top: -20px;
+    left: 15px;
+    font-size: 16px;
+    color: var(--rainbow-red);
+    font-weight: bold;
+}
+
+.simple-addition-table hr {
+    height: 2px;
+    background-color: var(--dark-blue);
+    border: none;
+}
+
+.simple-addition-table.final {
+    background-color: var(--light-green);
+    border-radius: 8px;
+    padding: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .level-buttons {
+        flex-direction: column;
+    }
+    
+    .level-btn {
+        width: 100%;
+    }
+    
+    .answer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Carry visualization improvements */
+.carry-note {
+    position: relative;
+    height: 20px;
+}
+
+.carry-note .carry {
+    position: absolute;
+    font-size: 16px;
+    color: var(--rainbow-red);
+    font-weight: bold;
+    top: -25px;
+    left: 10px;
+}
+
+.carry-note .carry-arrow {
+    position: absolute;
+    font-size: 16px;
+    color: var(--rainbow-red);
+    top: -20px;
+    left: 25px;
+}
+
+.steps-btn {
+    background-color: var(--rainbow-purple);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 15px;
+    margin: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.steps-btn:hover {
+    background-color: var(--dark-purple);
+}
+
+.step-by-step {
+    background-color: var(--light-yellow);
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.step-by-step h5 {
+    margin-top: 0;
+    color: var(--dark-blue);
+}
+
+.step-explanation {
+    margin-top: 15px;
+}
+
+.step-explanation p {
+    margin: 5px 0;
+}
+
+.final-result {
+    text-align: center;
+    font-size: 18px;
+    margin: 15px 0;
+    color: var(--dark-blue);
+    background-color: var(--light-green);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.real-life-examples {
+    background-color: var(--light-purple);
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.real-life-examples ul {
+    margin-left: 20px;
+}
+
+.real-life-examples li {
+    margin: 8px 0;
+}
+
+/* Properties of Addition Styling */
+.property-box {
+    margin: 20px 0;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.property-box.commutative {
+    background-color: var(--light-blue);
+    border-left: 5px solid var(--rainbow-blue);
+}
+
+.property-box.associative {
+    background-color: var(--light-green);
+    border-left: 5px solid var(--rainbow-green);
+}
+
+.property-box.identity {
+    background-color: var(--light-yellow);
+    border-left: 5px solid var(--rainbow-orange);
+}
+
+.property-description {
+    margin-bottom: 15px;
+}
+
+.property-formula {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.property-example {
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.example-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+    margin: 15px 0;
+}
+
+.example-left, .example-right {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+.visual-blocks {
+    margin: 15px 0;
+}
+
+.block-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.block {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    font-weight: bold;
+    color: white;
+}
+
+.block.blue {
+    background-color: var(--rainbow-blue);
+}
+
+.block.green {
+    background-color: var(--rainbow-green);
+}
+
+.block.purple {
+    background-color: var(--rainbow-purple);
+}
+
+.block.orange {
+    background-color: var(--rainbow-orange);
+}
+
+.block.zero {
+    background-color: #ccc;
+    color: var(--dark-blue);
+}
+
+.plus, .equals {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.group-bracket {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--dark-blue);
+}
+
+.example-conclusion {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 15px;
+    background-color: var(--lightest-yellow);
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.tip-container {
+    background-color: var(--light-purple);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+.properties-use {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.use-case {
+    flex: 1;
+    min-width: 250px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.property-problem {
+    background-color: var(--light-yellow);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.property-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.property-option {
+    background-color: white;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.property-option:hover {
+    background-color: var(--lightest-blue);
+}
+
+.property-option input {
+    margin-right: 10px;
+}
+
+.property-hint {
+    background-color: var(--light-yellow);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.property-hint .formula {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Four-Digit Addition Styling */
+.place-value-explanation {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.place-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.place-label, .place-value {
+    flex: 1;
+    text-align: center;
+    padding: 8px;
+    font-weight: bold;
+}
+
+.place-label {
+    background-color: var(--lightest-blue);
+    border-radius: 5px;
+}
+
+.thousands {
+    color: var(--rainbow-purple);
+}
+
+.hundreds {
+    color: var(--rainbow-blue);
+}
+
+.tens {
+    color: var(--rainbow-green);
+}
+
+.ones {
+    color: var(--rainbow-orange);
+}
+
+.place-row.values .place-value {
+    font-size: 14px;
+    background-color: var(--lightest-yellow);
+    border-radius: 5px;
+}
+
+.number-value {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 15px;
+    background-color: var(--light-green);
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.step-by-step-addition {
+    margin: 15px 0;
+    background-color: var(--lightest-blue);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.addition-step {
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border-left: 4px solid var(--rainbow-blue);
+}
+
+.addition-step h6 {
+    margin-top: 0;
+    color: var(--dark-blue);
+}
+
+.addition-step p {
+    margin: 5px 0;
+}
+
+.final-answer {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 15px;
+    background-color: var(--light-green);
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--dark-green);
+}
+
+.four-digit-addition-problem {
+    display: inline-block;
+    margin: 20px auto;
+    text-align: right;
+    min-width: 180px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.large-number {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.application-examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.application {
+    flex: 1;
+    min-width: 200px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.application h5 {
+    margin-top: 0;
+    color: var(--dark-blue);
+}
+
+.place-value-hint {
+    background-color: var(--lightest-yellow);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.hint-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+.hint-table th, .hint-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.hint-table th {
+    background-color: var(--light-blue);
+}
+
+.four-digit-steps {
+    background-color: var(--lightest-yellow);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.step-container {
+    margin: 15px 0;
+}
+
+.final-result {
+    text-align: center;
+    font-size: 18px;
+    background-color: var(--light-green);
+    padding: 10px;
+    border-radius: 8px;
+    color: var(--dark-green);
+}
+
+/* Level 8 Specific Styling */
+.complex-addition-container {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--lightest-blue);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.highlight-digit {
+    color: var(--dark-purple);
+    font-weight: bold;
+}
+
+.special-carry {
+    color: var(--rainbow-red);
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.advanced-tips-box {
+    background-color: var(--lightest-purple);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px 0;
+    border-left: 5px solid var(--rainbow-purple);
+}
+
+.tip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.tip-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.tip-card h5 {
+    margin-top: 0;
+    color: var(--dark-purple);
+    border-bottom: 2px dotted var(--light-purple);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.challenge-box {
+    background-color: var(--lightest-green);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px 0;
+    border-left: 5px solid var(--rainbow-green);
+}
+
+.challenge-problem {
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.challenge-hint {
+    display: inline-block;
+    color: var(--rainbow-blue);
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px dashed var(--rainbow-blue);
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.hint-content {
+    display: none;
+    margin-top: 10px;
+    color: var(--dark-blue);
+}
+
+.challenge-hint:hover .hint-content {
+    display: block;
+}
+
+.challenge-answer {
+    font-weight: bold;
+    color: var(--rainbow-green);
+    margin-top: 15px;
+}
+
+.carries-explanation {
+    background-color: var(--lightest-yellow);
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.carries-explanation h6 {
+    margin-top: 0;
+    color: var(--dark-blue);
+}
+
+/* Missing Digit Addition Styling */
+.missing-digit-problem {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    background-color: var(--lightest-blue);
+    border-radius: 10px;
+    margin: 20px 0;
+    letter-spacing: 2px;
+}
+
+.missing-box {
+    display: inline-block;
+    width: 24px;
+    height: 32px;
+    background-color: var(--light-yellow);
+    border: 2px dashed var(--rainbow-orange);
+    border-radius: 5px;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    color: var(--rainbow-orange);
+    margin: 0 2px;
+    vertical-align: middle;
+}
