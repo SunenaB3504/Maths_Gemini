@@ -9,16 +9,12 @@
     <link rel="stylesheet" href="styles/buttons.css">
     <!-- Add elaborate hint styles -->
     <link rel="stylesheet" href="styles/elaborate-hints.css">
-    <!-- Add Subtraction Safari styles -->
-    <link rel="stylesheet" href="styles/subtraction-safari.css">
     <!-- Add Number Friends styles -->
     <link rel="stylesheet" href="styles/number-friends.css">
     <!-- Add Addition Adventure styles -->
     <link rel="stylesheet" href="styles/addition-adventure.css">
     <!-- Add Welcome Screen styles -->
     <link rel="stylesheet" href="styles/welcome-screen.css">
-    <!-- Add Money Market styles -->
-    <link rel="stylesheet" href="styles/money-market.css">
     <!-- Add favicon -->
     <link rel="icon" type="image/png" href="images/NiaEd-favicon.png">
     <!-- Add meta tag to ensure modules are properly served -->
@@ -35,8 +31,6 @@
     <nav id="main-menu">
         <button id="btn-number-friends">Number Friends</button>
         <button id="btn-addition-adventure">Addition Adventure</button>
-        <button id="btn-subtraction-safari">Subtraction Safari</button>
-        <button id="btn-money-market">Money Market</button>
     </nav>
 
     <main id="game-area">
@@ -64,8 +58,6 @@
                     <ul class="adventure-list">
                         <li>🔢 <strong>Number Friends</strong> - Meet different types of numbers</li>
                         <li>➕ <strong>Addition Adventure</strong> - Learn to add numbers</li>
-                        <li>➖ <strong>Subtraction Safari</strong> - Explore the world of subtraction</li>
-                        <li>💰 <strong>Money Market</strong> - Play with coins and bills</li>
                     </ul>
                 </div>
                 
@@ -252,87 +244,6 @@
             <div id="feedback-area">
             </div>
         </div>
-
-        <div id="subtraction-safari-module" class="module" style="display: none;">
-            <h3>Subtraction Safari</h3>
-            <div class="safari-intro">
-                <p>Welcome to the Subtraction Safari! Get ready for an exciting adventure through the jungles of subtraction!</p>
-                <img src="images/subtraction-safari.png" alt="Subtraction Safari" class="safari-image">
-            </div>
-            
-            <div id="safari-selection">
-                <h4>Choose Your Adventure Path:</h4>
-                <div class="safari-buttons">
-                    <button class="safari-btn" data-safari="1">Jungle Introduction</button>
-                    <button class="safari-btn" data-safari="2">Clear Path Trail</button>
-                    <button class="safari-btn" data-safari="3">Borrowing Bridge</button>
-                    <button class="safari-btn" data-safari="4">Safari Rules</button>
-                    <button class="safari-btn" data-safari="5">Jungle Problems</button>
-                    <button class="safari-btn" data-safari="6">Missing Paw Prints</button>
-                    <button class="safari-btn" data-safari="7">Mystery Numbers</button>
-                </div>
-                <p class="safari-description" id="safari-description">Select a trail to start your subtraction adventure!</p>
-            </div>
-            
-            <div id="current-safari-content" class="safari-content-container">
-                <!-- Content will be loaded here based on selection -->
-            </div>
-            
-            <div id="safari-practice-area" style="display: none;">
-                <h4>Practice Area</h4>
-                <div id="safari-problem"></div>
-                <div id="safari-input-area"></div>
-                <div class="safari-controls">
-                    <button id="check-safari" class="check-btn">Check Answer</button>
-                    <button id="safari-hint" class="hint-btn">Get Hint</button>
-                    <button id="new-safari-problem" class="new-game-btn">New Problem</button>
-                </div>
-                <div id="safari-feedback"></div>
-            </div>
-            
-            <div id="safari-badge-display" style="display: none;">
-                <h4>Your Safari Badges</h4>
-                <div class="badge-container">
-                    <!-- Badges will appear here as adventures are completed -->
-                </div>
-            </div>
-        </div>
-
-        <div id="money-market-module" class="module" style="display: none;">
-            <h3>Money Market</h3>
-            <div class="money-intro">
-                <p>Welcome to the Money Market! Learn all about coins, bills, and how to use money!</p>
-                <img src="images/money-market.png" alt="Money Market" class="money-image">
-            </div>
-            
-            <div id="money-selection">
-                <h4>Choose Your Money Activity:</h4>
-                <div class="money-buttons">
-                    <button class="money-btn" data-money="1">Coin Recognition</button>
-                    <button class="money-btn" data-money="2">Count The Money</button>
-                    <button class="money-btn" data-money="3">Making Change</button>
-                    <button class="money-btn" data-money="4">Shopping Fun</button>
-                </div>
-                <p class="money-description" id="money-description">Select an activity to start learning about money!</p>
-            </div>
-            
-            <div id="current-money-content" class="money-content-container">
-                <!-- Content will be loaded here based on selection -->
-            </div>
-            
-            <div id="money-practice-area" style="display: none;">
-                <h4>Practice Area</h4>
-                <div id="money-problem"></div>
-                <div id="money-input-area"></div>
-                <div class="money-controls">
-                    <button id="check-money" class="check-btn">Check Answer</button>
-                    <button id="money-hint" class="hint-btn">Get Hint</button>
-                    <button id="new-money-problem" class="new-game-btn">New Problem</button>
-                </div>
-                <div id="money-feedback"></div>
-            </div>
-        </div>
-
     </main>
 
     <footer>
@@ -983,7 +894,7 @@
                         missingPosition: missingPosition
                     };
                     
-                    // Update question counter
+                    // Update question count
                     questionCount++;
                     
                     // Display the problem
@@ -1094,6 +1005,7 @@
                     if (currentProblem.missingIn === 1 || currentProblem.missingIn === 2) {
                         // Missing digit in one of the addends
                         hintContent = `
+
                             <p>To find the missing digit:</p>
                             <ol>
                                 <li>Calculate what the number with the missing digit should be.</li>
@@ -1103,6 +1015,7 @@
                     } else {
                         // Missing digit in sum
                         hintContent = `
+
                             <p>To find the missing digit:</p>
                             <ol>
                                 <li>Add the two numbers together.</li>
@@ -1269,7 +1182,7 @@
                         missingPosition: missingPosition
                     };
                     
-                    // Update question counter
+                    // Update question count
                     questionCount++;
                     
                     // Display the problem
@@ -1324,17 +1237,19 @@
                         // Create explanation text based on missing position
                         let explanationText = '';
                         if (currentProblem.missingIn === 1) {
-                            // Replace the missing digit in the first number
-                            let fullNum = currentProblem.num1.toString();
+                            const fullNum = currentProblem.digitPosition === 0 
+                                ? `${currentProblem.missingDigit}${currentProblem.num1 % 10}` 
+                                : `${Math.floor(currentProblem.num1 / 10)}${currentProblem.missingDigit}`;
                             explanationText = `${fullNum} + ${currentProblem.num2} = ${currentProblem.sum}`;
                         } else if (currentProblem.missingIn === 2) {
-                            // Replace the missing digit in the second number
-                            let fullNum = currentProblem.num2.toString();
+                            const fullNum = currentProblem.digitPosition === 0 
+                                ? `${currentProblem.missingDigit}${currentProblem.num2 % 10}` 
+                                : `${Math.floor(currentProblem.num2 / 10)}${currentProblem.missingDigit}`;
                             explanationText = `${currentProblem.num1} + ${fullNum} = ${currentProblem.sum}`;
                         } else {
-                            // Replace the missing digit in the sum
-                            let fullNum = currentProblem.sum.toString();
-                            explanationText = `${currentProblem.num1} + ${currentProblem.num2} = ${fullNum}`;
+                            const sumDigits = currentProblem.sum.toString().split('');
+                            const position = currentProblem.digitPosition;
+                            explanationText = `${currentProblem.num1} + ${currentProblem.num2} = ${currentProblem.sum}`;
                         }
                         
                         feedbackArea.innerHTML = `
@@ -1353,13 +1268,13 @@
                             feedbackArea.innerHTML += `
                                 <button id="next-question" class="next-btn">Next Question</button>
                             `;
-                            document.getElementById('next-question').addEventListener('click', generate4DMissingDigitProblem);
+                            document.getElementById('next-question').addEventListener('click', generateMissingDigitProblem);
                         }
                     } else {
                         // Incorrect answer
                         feedbackArea.innerHTML = `
                             <p class="error">Not quite right. Try again!</p>
-                            <p>Hint: Check your addition and place values carefully.</p>
+                            <p>Hint: Check your calculation carefully.</p>
                         `;
                     }
                 }
@@ -1378,21 +1293,21 @@
                     if (currentProblem.missingIn === 1 || currentProblem.missingIn === 2) {
                         // Missing digit in one of the addends
                         hintContent = `
+
                             <p>To find the missing digit:</p>
                             <ol>
-                                <li>First, work out what the full 4-digit number should be.</li>
-                                <li>Then, look at the ${currentProblem.missingPosition} place of that number.</li>
-                                <li>Remember that in 4-digit numbers, each position represents a specific value (thousands, hundreds, tens, ones).</li>
+                                <li>Calculate what the number with the missing digit should be.</li>
+                                <li>Look at the ${currentProblem.missingPosition} place of that number.</li>
                             </ol>
                         `;
                     } else {
                         // Missing digit in sum
                         hintContent = `
+
                             <p>To find the missing digit:</p>
                             <ol>
-                                <li>Add the two 4-digit numbers together.</li>
+                                <li>Add the two numbers together.</li>
                                 <li>Look at the ${currentProblem.missingPosition} place of the answer.</li>
-                                <li>Pay attention to any carrying that might affect this digit.</li>
                             </ol>
                         `;
                     }
@@ -1417,13 +1332,13 @@
                         <div class="final-results">
                             <h3>Level Complete! 🏆</h3>
                             <div class="results-content">
-                                <p>Great job! You've completed Level 10: 4-Digit Missing Digit Addition</p>
+                                <p>Great job! You've completed Level 9: Missing Digit Addition</p>
                                 <div class="score-summary">
                                     <p>Your score: <strong>${score}</strong> points out of 100 possible</p>
                                     <p>Percentage: <strong>${percentage}%</strong></p>
                                 </div>
                                 <div class="stars-earned">
-                                    ${percentage >= 90 ? '⭐⭐⭐' : percentage >= 70 ? '⭐⭐' : percentage >= 50 ? '⭐' : 'Keep practicing!'}
+                                    ${percentage >= 90 ? '⭐⭐⭐' : percentage >= 70 ? '⭐⭐' : percentage >= 50 ? '⭐' : 'Keep practicing!' }
                                 </div>
                             </div>
                             <button id="retry-level" class="retry-btn">Try Again</button>
@@ -1435,7 +1350,871 @@
                         // Reset and start over
                         questionCount = 0;
                         score = 0;
-                        generate4DMissingDigitProblem();
+                        generateMissingDigitProblem();
+                    });
+                    
+                    document.getElementById('return-to-menu').addEventListener('click', function() {
+                        // Clear areas
+                        problemContainer.innerHTML = '';
+                        inputArea.innerHTML = '';
+                        feedbackArea.innerHTML = '';
+                    });
+                }
+            }
+            
+            // Direct implementation of Level 10 practice
+            function directLevel10Practice() {
+                // Get essential elements
+                const problemContainer = document.getElementById('current-addition-problem');
+                const inputArea = document.getElementById('input-area');
+                const feedbackArea = document.getElementById('feedback-area');
+                
+                console.log('Starting direct Level 10 Practice with:', {
+                    problemContainer: !!problemContainer,
+                    inputArea: !!inputArea, 
+                    feedbackArea: !!feedbackArea
+                });
+                
+                // Simple state management
+                let questionCount = 0;
+                let score = 0;
+                let currentProblem = null;
+                
+                // Generate first problem
+                generate4DMissingDigitProblem();
+                
+                // Generate a 4-digit missing digit problem
+                function generate4DMissingDigitProblem() {
+                    // Clear previous feedback
+                    feedbackArea.innerHTML = '';
+                    
+                    // Hide hint container if exists
+                    const hintContainer = document.getElementById('hint-container');
+                    if (hintContainer) hintContainer.style.display = 'none';
+                    
+                    // Generate four-digit numbers for the problem
+                    const num1 = Math.floor(Math.random() * 9000) + 1000; // 1000-9999
+                    const num2 = Math.floor(Math.random() * 9000) + 1000; // 1000-9999
+                    const sum = num1 + num2;
+                    
+                    // Convert numbers to strings for digit manipulation
+                    const num1Str = num1.toString();
+                    const num2Str = num2.toString();
+                    const sumStr = sum.toString();
+                    
+                    // Decide which number will have the missing digit (1=first number, 2=second number, 3=sum)
+                    const missingIn = Math.floor(Math.random() * 3) + 1;
+                    
+                    // Decide which position to hide (0=thousands, 1=hundreds, 2=tens, 3=ones)
+                    let digitPosition = Math.floor(Math.random() * 4);
+                    
+                    // Set up the problem
+                    let num1Display = num1Str;
+                    let num2Display = num2Str;
+                    let sumDisplay = sumStr;
+                    let missingDigit = null;
+                    let missingPosition = '';
+                    
+                    if (missingIn === 1) {
+                        // Missing digit in first number
+                        missingDigit = num1Str[digitPosition];
+                        num1Display = num1Str.substring(0, digitPosition) + 
+                                      `<span class="missing-box">?</span>` + 
+                                      num1Str.substring(digitPosition + 1);
+                        
+                        // Set position name
+                        switch(digitPosition) {
+                            case 0: missingPosition = 'thousands'; break;
+                            case 1: missingPosition = 'hundreds'; break;
+                            case 2: missingPosition = 'tens'; break;
+                            case 3: missingPosition = 'ones'; break;
+                        }
+                    } else if (missingIn === 2) {
+                        // Missing digit in second number
+                        missingDigit = num2Str[digitPosition];
+                        num2Display = num2Str.substring(0, digitPosition) + 
+                                      `<span class="missing-box">?</span>` + 
+                                      num2Str.substring(digitPosition + 1);
+                        
+                        // Set position name
+                        switch(digitPosition) {
+                            case 0: missingPosition = 'thousands'; break;
+                            case 1: missingPosition = 'hundreds'; break;
+                            case 2: missingPosition = 'tens'; break;
+                            case 3: missingPosition = 'ones'; break;
+                        }
+                    } else {
+                        // Missing digit in sum
+                        missingDigit = sumStr[digitPosition];
+                        sumDisplay = sumStr.substring(0, digitPosition) + 
+                                     `<span class="missing-box">?</span>` + 
+                                     sumStr.substring(digitPosition + 1);
+                        
+                        // Set position name
+                        switch(digitPosition) {
+                            case 0: missingPosition = 'thousands'; break;
+                            case 1: missingPosition = 'hundreds'; break;
+                            case 2: missingPosition = 'tens'; break;
+                            case 3: missingPosition = 'ones'; break;
+                        }
+                    }
+                    
+                    // Save current problem
+                    currentProblem = {
+                        num1: num1,
+                        num2: num2,
+                        sum: sum,
+                        missingDigit: parseInt(missingDigit),
+                        missingIn: missingIn,
+                        digitPosition: digitPosition,
+                        missingPosition: missingPosition
+                    };
+                    
+                    // Update question count
+                    questionCount++;
+                    
+                    // Display the problem
+                    problemContainer.innerHTML = `
+                        <div class="problem-container">
+                            <div class="progress-tracker">
+                                <div class="score-display">Score: <span id="score-value">${score}</span> points</div>
+                                <div class="question-counter">Question <span id="current-question">${questionCount}</span> of <span id="total-questions">10</span></div>
+                            </div>
+                            <h4>Find the missing digit:</h4>
+                            <div class="missing-digit-problem">
+                                ${num1Display} + ${num2Display} = ${sumDisplay}
+                            </div>
+                        </div>
+                    `;
+                    
+                    // Create input area
+                    inputArea.innerHTML = `
+                        <div class="answer-container">
+                            <label for="user-answer">Enter the missing digit (0-9):</label>
+                            <input type="number" id="user-answer" class="answer-input" min="0" max="9">
+                            <button id="check-answer" class="check-btn">Check Answer</button>
+                        </div>
+                        <button id="show-hint" class="hint-btn">Show Hint</button>
+                    `;
+                    
+                    // Setup event listeners
+                    document.getElementById('check-answer').addEventListener('click', checkAnswer);
+                    document.getElementById('user-answer').addEventListener('keyup', function(event) {
+                        if (event.key === "Enter") checkAnswer();
+                    });
+                    document.getElementById('show-hint').addEventListener('click', showHint);
+                    
+                    // Focus on the answer input
+                    document.getElementById('user-answer').focus();
+                }
+                
+                // Check the user's answer
+                function checkAnswer() {
+                    const userAnswer = parseInt(document.getElementById('user-answer').value);
+                    
+                    if (isNaN(userAnswer) || userAnswer < 0 || userAnswer > 9) {
+                        feedbackArea.innerHTML = '<p class="error">Please enter a digit between 0 and 9!</p>';
+                        return;
+                    }
+                    
+                    if (userAnswer === currentProblem.missingDigit) {
+                        // Correct answer
+                        score += 10;
+                        document.getElementById('score-value').textContent = score;
+                        
+                        // Create explanation text based on missing position
+                        let explanationText = '';
+                        if (currentProblem.missingIn === 1) {
+                            const fullNum = currentProblem.digitPosition === 0 
+                                ? `${currentProblem.missingDigit}${currentProblem.num1 % 10}` 
+                                : `${Math.floor(currentProblem.num1 / 10)}${currentProblem.missingDigit}`;
+                            explanationText = `${fullNum} + ${currentProblem.num2} = ${currentProblem.sum}`;
+                        } else if (currentProblem.missingIn === 2) {
+                            const fullNum = currentProblem.digitPosition === 0 
+                                ? `${currentProblem.missingDigit}${currentProblem.num2 % 10}` 
+                                : `${Math.floor(currentProblem.num2 / 10)}${currentProblem.missingDigit}`;
+                            explanationText = `${currentProblem.num1} + ${fullNum} = ${currentProblem.sum}`;
+                        } else {
+                            const sumDigits = currentProblem.sum.toString().split('');
+                            const position = currentProblem.digitPosition;
+                            explanationText = `${currentProblem.num1} + ${currentProblem.num2} = ${currentProblem.sum}`;
+                        }
+                        
+                        feedbackArea.innerHTML = `
+                            <div class="success-feedback">
+                                <p class="success">Correct! ${currentProblem.missingDigit} is right! 🎉</p>
+                                <p>${explanationText}</p>
+                                <p>You earned 10 points!</p>
+                            </div>
+                        `;
+                        
+                        // Check if we've completed all questions
+                        if (questionCount >= 10) {
+                            showFinalResults();
+                        } else {
+                            // Next question button
+                            feedbackArea.innerHTML += `
+                                <button id="next-question" class="next-btn">Next Question</button>
+                            `;
+                            document.getElementById('next-question').addEventListener('click', generateMissingDigitProblem);
+                        }
+                    } else {
+                        // Incorrect answer
+                        feedbackArea.innerHTML = `
+                            <p class="error">Not quite right. Try again!</p>
+                            <p>Hint: Check your calculation carefully.</p>
+                        `;
+                    }
+                }
+                
+                // Show a hint for the current problem
+                function showHint() {
+                    // Get hint container or create if not exists
+                    let hintContainer = document.getElementById('hint-container');
+                    if (!hintContainer) {
+                        hintContainer = document.createElement('div');
+                        hintContainer.id = 'hint-container';
+                        document.getElementById('visual-tools').appendChild(hintContainer);
+                    }
+                    
+                    let hintContent = '';
+                    if (currentProblem.missingIn === 1 || currentProblem.missingIn === 2) {
+                        // Missing digit in one of the addends
+                        hintContent = `
+
+                            <p>To find the missing digit:</p>
+                            <ol>
+                                <li>Calculate what the number with the missing digit should be.</li>
+                                <li>Look at the ${currentProblem.missingPosition} place of that number.</li>
+                            </ol>
+                        `;
+                    } else {
+                        // Missing digit in sum
+                        hintContent = `
+
+                            <p>To find the missing digit:</p>
+                            <ol>
+                                <li>Add the two numbers together.</li>
+                                <li>Look at the ${currentProblem.missingPosition} place of the answer.</li>
+                            </ol>
+                        `;
+                    }
+                    
+                    hintContainer.style.display = 'block';
+                    hintContainer.innerHTML = `
+                        <h5>Hint</h5>
+                        <div id="hint-content">
+                            ${hintContent}
+                        </div>
+                    `;
+                }
+                
+                // Show final results
+                function showFinalResults() {
+                    const percentage = Math.floor((score / 100) * 100);
+                    
+                    problemContainer.innerHTML = '';
+                    inputArea.innerHTML = '';
+                    
+                    feedbackArea.innerHTML = `
+                        <div class="final-results">
+                            <h3>Level Complete! 🏆</h3>
+                            <div class="results-content">
+                                <p>Great job! You've completed Level 9: Missing Digit Addition</p>
+                                <div class="score-summary">
+                                    <p>Your score: <strong>${score}</strong> points out of 100 possible</p>
+                                    <p>Percentage: <strong>${percentage}%</strong></p>
+                                </div>
+                                <div class="stars-earned">
+                                    ${percentage >= 90 ? '⭐⭐⭐' : percentage >= 70 ? '⭐⭐' : percentage >= 50 ? '⭐' : 'Keep practicing!' }
+                                </div>
+                            </div>
+                            <button id="retry-level" class="retry-btn">Try Again</button>
+                            <button id="return-to-menu" class="menu-btn">Return to Level Menu</button>
+                        </div>
+                    `;
+                    
+                    document.getElementById('retry-level').addEventListener('click', function() {
+                        // Reset and start over
+                        questionCount = 0;
+                        score = 0;
+                        generateMissingDigitProblem();
+                    });
+                    
+                    document.getElementById('return-to-menu').addEventListener('click', function() {
+                        // Clear areas
+                        problemContainer.innerHTML = '';
+                        inputArea.innerHTML = '';
+                        feedbackArea.innerHTML = '';
+                    });
+                }
+            }
+            
+            // Direct implementation of Level 10 practice
+            function directLevel10Practice() {
+                // Get essential elements
+                const problemContainer = document.getElementById('current-addition-problem');
+                const inputArea = document.getElementById('input-area');
+                const feedbackArea = document.getElementById('feedback-area');
+                
+                console.log('Starting direct Level 10 Practice with:', {
+                    problemContainer: !!problemContainer,
+                    inputArea: !!inputArea, 
+                    feedbackArea: !!feedbackArea
+                });
+                
+                // Simple state management
+                let questionCount = 0;
+                let score = 0;
+                let currentProblem = null;
+                
+                // Generate first problem
+                generate4DMissingDigitProblem();
+                
+                // Generate a 4-digit missing digit problem
+                function generate4DMissingDigitProblem() {
+                    // Clear previous feedback
+                    feedbackArea.innerHTML = '';
+                    
+                    // Hide hint container if exists
+                    const hintContainer = document.getElementById('hint-container');
+                    if (hintContainer) hintContainer.style.display = 'none';
+                    
+                    // Generate four-digit numbers for the problem
+                    const num1 = Math.floor(Math.random() * 9000) + 1000; // 1000-9999
+                    const num2 = Math.floor(Math.random() * 9000) + 1000; // 1000-9999
+                    const sum = num1 + num2;
+                    
+                    // Convert numbers to strings for digit manipulation
+                    const num1Str = num1.toString();
+                    const num2Str = num2.toString();
+                    const sumStr = sum.toString();
+                    
+                    // Decide which number will have the missing digit (1=first number, 2=second number, 3=sum)
+                    const missingIn = Math.floor(Math.random() * 3) + 1;
+                    
+                    // Decide which position to hide (0=thousands, 1=hundreds, 2=tens, 3=ones)
+                    let digitPosition = Math.floor(Math.random() * 4);
+                    
+                    // Set up the problem
+                    let num1Display = num1Str;
+                    let num2Display = num2Str;
+                    let sumDisplay = sumStr;
+                    let missingDigit = null;
+                    let missingPosition = '';
+                    
+                    if (missingIn === 1) {
+                        // Missing digit in first number
+                        missingDigit = num1Str[digitPosition];
+                        num1Display = num1Str.substring(0, digitPosition) + 
+                                      `<span class="missing-box">?</span>` + 
+                                      num1Str.substring(digitPosition + 1);
+                        
+                        // Set position name
+                        switch(digitPosition) {
+                            case 0: missingPosition = 'thousands'; break;
+                            case 1: missingPosition = 'hundreds'; break;
+                            case 2: missingPosition = 'tens'; break;
+                            case 3: missingPosition = 'ones'; break;
+                        }
+                    } else if (missingIn === 2) {
+                        // Missing digit in second number
+                        missingDigit = num2Str[digitPosition];
+                        num2Display = num2Str.substring(0, digitPosition) + 
+                                      `<span class="missing-box">?</span>` + 
+                                      num2Str.substring(digitPosition + 1);
+                        
+                        // Set position name
+                        switch(digitPosition) {
+                            case 0: missingPosition = 'thousands'; break;
+                            case 1: missingPosition = 'hundreds'; break;
+                            case 2: missingPosition = 'tens'; break;
+                            case 3: missingPosition = 'ones'; break;
+                        }
+                    } else {
+                        // Missing digit in sum
+                        missingDigit = sumStr[digitPosition];
+                        sumDisplay = sumStr.substring(0, digitPosition) + 
+                                     `<span class="missing-box">?</span>` + 
+                                     sumStr.substring(digitPosition + 1);
+                        
+                        // Set position name
+                        switch(digitPosition) {
+                            case 0: missingPosition = 'thousands'; break;
+                            case 1: missingPosition = 'hundreds'; break;
+                            case 2: missingPosition = 'tens'; break;
+                            case 3: missingPosition = 'ones'; break;
+                        }
+                    }
+                    
+                    // Save current problem
+                    currentProblem = {
+                        num1: num1,
+                        num2: num2,
+                        sum: sum,
+                        missingDigit: parseInt(missingDigit),
+                        missingIn: missingIn,
+                        digitPosition: digitPosition,
+                        missingPosition: missingPosition
+                    };
+                    
+                    // Update question count
+                    questionCount++;
+                    
+                    // Display the problem
+                    problemContainer.innerHTML = `
+                        <div class="problem-container">
+                            <div class="progress-tracker">
+                                <div class="score-display">Score: <span id="score-value">${score}</span> points</div>
+                                <div class="question-counter">Question <span id="current-question">${questionCount}</span> of <span id="total-questions">10</span></div>
+                            </div>
+                            <h4>Find the missing digit:</h4>
+                            <div class="missing-digit-problem">
+                                ${num1Display} + ${num2Display} = ${sumDisplay}
+                            </div>
+                        </div>
+                    `;
+                    
+                    // Create input area
+                    inputArea.innerHTML = `
+                        <div class="answer-container">
+                            <label for="user-answer">Enter the missing digit (0-9):</label>
+                            <input type="number" id="user-answer" class="answer-input" min="0" max="9">
+                            <button id="check-answer" class="check-btn">Check Answer</button>
+                        </div>
+                        <button id="show-hint" class="hint-btn">Show Hint</button>
+                    `;
+                    
+                    // Setup event listeners
+                    document.getElementById('check-answer').addEventListener('click', checkAnswer);
+                    document.getElementById('user-answer').addEventListener('keyup', function(event) {
+                        if (event.key === "Enter") checkAnswer();
+                    });
+                    document.getElementById('show-hint').addEventListener('click', showHint);
+                    
+                    // Focus on the answer input
+                    document.getElementById('user-answer').focus();
+                }
+                
+                // Check the user's answer
+                function checkAnswer() {
+                    const userAnswer = parseInt(document.getElementById('user-answer').value);
+                    
+                    if (isNaN(userAnswer) || userAnswer < 0 || userAnswer > 9) {
+                        feedbackArea.innerHTML = '<p class="error">Please enter a digit between 0 and 9!</p>';
+                        return;
+                    }
+                    
+                    if (userAnswer === currentProblem.missingDigit) {
+                        // Correct answer
+                        score += 10;
+                        document.getElementById('score-value').textContent = score;
+                        
+                        // Create explanation text based on missing position
+                        let explanationText = '';
+                        if (currentProblem.missingIn === 1) {
+                            const fullNum = currentProblem.digitPosition === 0 
+                                ? `${currentProblem.missingDigit}${currentProblem.num1 % 10}` 
+                                : `${Math.floor(currentProblem.num1 / 10)}${currentProblem.missingDigit}`;
+                            explanationText = `${fullNum} + ${currentProblem.num2} = ${currentProblem.sum}`;
+                        } else if (currentProblem.missingIn === 2) {
+                            const fullNum = currentProblem.digitPosition === 0 
+                                ? `${currentProblem.missingDigit}${currentProblem.num2 % 10}` 
+                                : `${Math.floor(currentProblem.num2 / 10)}${currentProblem.missingDigit}`;
+                            explanationText = `${currentProblem.num1} + ${fullNum} = ${currentProblem.sum}`;
+                        } else {
+                            const sumDigits = currentProblem.sum.toString().split('');
+                            const position = currentProblem.digitPosition;
+                            explanationText = `${currentProblem.num1} + ${currentProblem.num2} = ${currentProblem.sum}`;
+                        }
+                        
+                        feedbackArea.innerHTML = `
+                            <div class="success-feedback">
+                                <p class="success">Correct! ${currentProblem.missingDigit} is right! 🎉</p>
+                                <p>${explanationText}</p>
+                                <p>You earned 10 points!</p>
+                            </div>
+                        `;
+                        
+                        // Check if we've completed all questions
+                        if (questionCount >= 10) {
+                            showFinalResults();
+                        } else {
+                            // Next question button
+                            feedbackArea.innerHTML += `
+                                <button id="next-question" class="next-btn">Next Question</button>
+                            `;
+                            document.getElementById('next-question').addEventListener('click', generateMissingDigitProblem);
+                        }
+                    } else {
+                        // Incorrect answer
+                        feedbackArea.innerHTML = `
+                            <p class="error">Not quite right. Try again!</p>
+                            <p>Hint: Check your calculation carefully.</p>
+                        `;
+                    }
+                }
+                
+                // Show a hint for the current problem
+                function showHint() {
+                    // Get hint container or create if not exists
+                    let hintContainer = document.getElementById('hint-container');
+                    if(!hintContainer) {
+                        hintContainer = document.createElement('div');
+                        hintContainer.id = 'hint-container';
+                        document.getElementById('visual-tools').appendChild(hintContainer);
+                    }
+                    
+                    let hintContent = '';
+                    if (currentProblem.missingIn === 1 || currentProblem.missingIn === 2) {
+                        // Missing digit in one of the addends
+                        hintContent = `
+
+                            <p>To find the missing digit:</p>
+                            <ol>
+                                <li>Calculate what the number with the missing digit should be.</li>
+                                <li>Look at the ${currentProblem.missingPosition} place of that number.</li>
+                            </ol>
+                        `;
+                    } else {
+                        // Missing digit in sum
+                        hintContent = `
+
+                            <p>To find the missing digit:</p>
+                            <ol>
+                                <li>Add the two numbers together.</li>
+                                <li>Look at the ${currentProblem.missingPosition} place of the answer.</li>
+                            </ol>
+                        `;
+                    }
+                    
+                    hintContainer.style.display = 'block';
+                    hintContainer.innerHTML = `
+                        <h5>Hint</h5>
+                        <div id="hint-content">
+                            ${hintContent}
+                        </div>
+                    `;
+                }
+                
+                // Show final results
+                function showFinalResults() {
+                    const percentage = Math.floor((score / 100) * 100);
+                    
+                    problemContainer.innerHTML = '';
+                    inputArea.innerHTML = '';
+                    
+                    feedbackArea.innerHTML = `
+                        <div class="final-results">
+                            <h3>Level Complete! 🏆</h3>
+                            <div class="results-content">
+                                <p>Great job! You've completed Level 9: Missing Digit Addition</p>
+                                <div class="score-summary">
+                                    <p>Your score: <strong>${score}</strong> points out of 100 possible</p>
+                                    <p>Percentage: <strong>${percentage}%</strong></p>
+                                </div>
+                                <div class="stars-earned">
+                                    ${percentage >= 90 ? '⭐⭐⭐' : percentage >= 70 ? '⭐⭐' : percentage >= 50 ? '⭐' : 'Keep practicing!' }
+                                </div>
+                            </div>
+                            <button id="retry-level" class="retry-btn">Try Again</button>
+                            <button id="return-to-menu" class="menu-btn">Return to Level Menu</button>
+                        </div>
+                    `;
+                    
+                    document.getElementById('retry-level').addEventListener('click', function() {
+                        // Reset and start over
+                        questionCount = 0;
+                        score = 0;
+                        generateMissingDigitProblem();
+                    });
+                    
+                    document.getElementById('return-to-menu').addEventListener('click', function() {
+                        // Clear areas
+                        problemContainer.innerHTML = '';
+                        inputArea.innerHTML = '';
+                        feedbackArea.innerHTML = '';
+                    });
+                }
+            }
+            
+            // Direct implementation of Level 10 practice
+            function directLevel10Practice() {
+                // Get essential elements
+                const problemContainer = document.getElementById('current-addition-problem');
+                const inputArea = document.getElementById('input-area');
+                const feedbackArea = document.getElementById('feedback-area');
+                
+                console.log('Starting direct Level 10 Practice with:', {
+                    problemContainer: !!problemContainer,
+                    inputArea: !!inputArea, 
+                    feedbackArea: !!feedbackArea
+                });
+                
+                // Simple state management
+                let questionCount = 0;
+                let score = 0;
+                let currentProblem = null;
+                
+                // Generate first problem
+                generate4DMissingDigitProblem();
+                
+                // Generate a 4-digit missing digit problem
+                function generate4DMissingDigitProblem() {
+                    // Clear previous feedback
+                    feedbackArea.innerHTML = '';
+                    
+                    // Hide hint container if exists
+                    const hintContainer = document.getElementById('hint-container');
+                    if (hintContainer) hintContainer.style.display = 'none';
+                    
+                    // Generate four-digit numbers for the problem
+                    const num1 = Math.floor(Math.random() * 9000) + 1000; // 1000-9999
+                    const num2 = Math.floor(Math.random() * 9000) + 1000; // 1000-9999
+                    const sum = num1 + num2;
+                    
+                    // Convert numbers to strings for digit manipulation
+                    const num1Str = num1.toString();
+                    const num2Str = num2.toString();
+                    const sumStr = sum.toString();
+                    
+                    // Decide which number will have the missing digit (1=first number, 2=second number, 3=sum)
+                    const missingIn = Math.floor(Math.random() * 3) + 1;
+                    
+                    // Decide which position to hide (0=thousands, 1=hundreds, 2=tens, 3=ones)
+                    let digitPosition = Math.floor(Math.random() * 4);
+                    
+                    // Set up the problem
+                    let num1Display = num1Str;
+                    let num2Display = num2Str;
+                    let sumDisplay = sumStr;
+                    let missingDigit = null;
+                    let missingPosition = '';
+                    
+                    if (missingIn === 1) {
+                        // Missing digit in first number
+                        missingDigit = num1Str[digitPosition];
+                        num1Display = num1Str.substring(0, digitPosition) + 
+                                      `<span class="missing-box">?</span>` + 
+                                      num1Str.substring(digitPosition + 1);
+                        
+                        // Set position name
+                        switch(digitPosition) {
+                            case 0: missingPosition = 'thousands'; break;
+                            case 1: missingPosition = 'hundreds'; break;
+                            case 2: missingPosition = 'tens'; break;
+                            case 3: missingPosition = 'ones'; break;
+                        }
+                    } else if (missingIn === 2) {
+                        // Missing digit in second number
+                        missingDigit = num2Str[digitPosition];
+                        num2Display = num2Str.substring(0, digitPosition) + 
+                                      `<span class="missing-box">?</span>` + 
+                                      num2Str.substring(digitPosition + 1);
+                        
+                        // Set position name
+                        switch(digitPosition) {
+                            case 0: missingPosition = 'thousands'; break;
+                            case 1: missingPosition = 'hundreds'; break;
+                            case 2: missingPosition = 'tens'; break;
+                            case 3: missingPosition = 'ones'; break;
+                        }
+                    } else {
+                        // Missing digit in sum
+                        missingDigit = sumStr[digitPosition];
+                        sumDisplay = sumStr.substring(0, digitPosition) + 
+                                     `<span class="missing-box">?</span>` + 
+                                     sumStr.substring(digitPosition + 1);
+                        
+                        // Set position name
+                        switch(digitPosition) {
+                            case 0: missingPosition = 'thousands'; break;
+                            case 1: missingPosition = 'hundreds'; break;
+                            case 2: missingPosition = 'tens'; break;
+                            case 3: missingPosition = 'ones'; break;
+                        }
+                    }
+                    
+                    // Save current problem
+                    currentProblem = {
+                        num1: num1,
+                        num2: num2,
+                        sum: sum,
+                        missingDigit: parseInt(missingDigit),
+                        missingIn: missingIn,
+                        digitPosition: digitPosition,
+                        missingPosition: missingPosition
+                    };
+                    
+                    // Update question count
+                    questionCount++;
+                    
+                    // Display the problem
+                    problemContainer.innerHTML = `
+                        <div class="problem-container">
+                            <div class="progress-tracker">
+                                <div class="score-display">Score: <span id="score-value">${score}</span> points</div>
+                                <div class="question-counter">Question <span id="current-question">${questionCount}</span> of <span id="total-questions">10</span></div>
+                            </div>
+                            <h4>Find the missing digit:</h4>
+                            <div class="missing-digit-problem">
+                                ${num1Display} + ${num2Display} = ${sumDisplay}
+                            </div>
+                        </div>
+                    `;
+                    
+                    // Create input area
+                    inputArea.innerHTML = `
+                        <div class="answer-container">
+                            <label for="user-answer">Enter the missing digit (0-9):</label>
+                            <input type="number" id="user-answer" class="answer-input" min="0" max="9">
+                            <button id="check-answer" class="check-btn">Check Answer</button>
+                        </div>
+                        <button id="show-hint" class="hint-btn">Show Hint</button>
+                    `;
+                    
+                    // Setup event listeners
+                    document.getElementById('check-answer').addEventListener('click', checkAnswer);
+                    document.getElementById('user-answer').addEventListener('keyup', function(event) {
+                        if (event.key === "Enter") checkAnswer();
+                    });
+                    document.getElementById('show-hint').addEventListener('click', showHint);
+                    
+                    // Focus on the answer input
+                    document.getElementById('user-answer').focus();
+                }
+                
+                // Check the user's answer
+                function checkAnswer() {
+                    const userAnswer = parseInt(document.getElementById('user-answer').value);
+                    
+                    if (isNaN(userAnswer) || userAnswer < 0 || userAnswer > 9) {
+                        feedbackArea.innerHTML = '<p class="error">Please enter a digit between 0 and 9!</p>';
+                        return;
+                    }
+                    
+                    if (userAnswer === currentProblem.missingDigit) {
+                        // Correct answer
+                        score += 10;
+                        document.getElementById('score-value').textContent = score;
+                        
+                        // Create explanation text based on missing position
+                        let explanationText = '';
+                        if (currentProblem.missingIn === 1) {
+                            const fullNum = currentProblem.digitPosition === 0 
+                                ? `${currentProblem.missingDigit}${currentProblem.num1 % 10}` 
+                                : `${Math.floor(currentProblem.num1 / 10)}${currentProblem.missingDigit}`;
+                            explanationText = `${fullNum} + ${currentProblem.num2} = ${currentProblem.sum}`;
+                        } else if (currentProblem.missingIn === 2) {
+                            const fullNum = currentProblem.digitPosition === 0 
+                                ? `${currentProblem.missingDigit}${currentProblem.num2 % 10}` 
+                                : `${Math.floor(currentProblem.num2 / 10)}${currentProblem.missingDigit}`;
+                            explanationText = `${currentProblem.num1} + ${fullNum} = ${currentProblem.sum}`;
+                        } else {
+                            const sumDigits = currentProblem.sum.toString().split('');
+                            const position = currentProblem.digitPosition;
+                            explanationText = `${currentProblem.num1} + ${currentProblem.num2} = ${currentProblem.sum}`;
+                        }
+                        
+                        feedbackArea.innerHTML = `
+                            <div class="success-feedback">
+                                <p class="success">Correct! ${currentProblem.missingDigit} is right! 🎉</p>
+                                <p>${explanationText}</p>
+                                <p>You earned 10 points!</p>
+                            </div>
+                        `;
+                        
+                        // Check if we've completed all questions
+                        if (questionCount >= 10) {
+                            showFinalResults();
+                        } else {
+                            // Next question button
+                            feedbackArea.innerHTML += `
+                                <button id="next-question" class="next-btn">Next Question</button>
+                            `;
+                            document.getElementById('next-question').addEventListener('click', generateMissingDigitProblem);
+                        }
+                    } else {
+                        // Incorrect answer
+                        feedbackArea.innerHTML = `
+                            <p class="error">Not quite right. Try again!</p>
+                            <p>Hint: Check your calculation carefully.</p>
+                        `;
+                    }
+                }
+                
+                // Show a hint for the current problem
+                function showHint() {
+                    // Get hint container or create if not exists
+                    let hintContainer = document.getElementById('hint-container');
+                    if (!hintContainer) {
+                        hintContainer = document.createElement('div');
+                        hintContainer.id = 'hint-container';
+                        document.getElementById('visual-tools').appendChild(hintContainer);
+                    }
+                    
+                    let hintContent = '';
+                    if (currentProblem.missingIn === 1 || currentProblem.missingIn === 2) {
+                        // Missing digit in one of the addends
+                        hintContent = `
+
+                            <p>To find the missing digit:</p>
+                            <ol>
+                                <li>Calculate what the number with the missing digit should be.</li>
+                                <li>Look at the ${currentProblem.missingPosition} place of that number.</li>
+                            </ol>
+                        `;
+                    } else {
+                        // Missing digit in sum
+                        hintContent = `
+
+                            <p>To find the missing digit:</p>
+                            <ol>
+                                <li>Add the two numbers together.</li>
+                                <li>Look at the ${currentProblem.missingPosition} place of the answer.</li>
+                            </ol>
+                        `;
+                    }
+                    
+                    hintContainer.style.display = 'block';
+                    hintContainer.innerHTML = `
+                        <h5>Hint</h5>
+                        <div id="hint-content">
+                            ${hintContent}
+                        </div>
+                    `;
+                }
+                
+                // Show final results
+                function showFinalResults() {
+                    const percentage = Math.floor((score / 100) * 100);
+                    
+                    problemContainer.innerHTML = '';
+                    inputArea.innerHTML = '';
+                    
+                    feedbackArea.innerHTML = `
+                        <div class="final-results">
+                            <h3>Level Complete! 🏆</h3>
+                            <div class="results-content">
+                                <p>Great job! You've completed Level 9: Missing Digit Addition</p>
+                                <div class="score-summary">
+                                    <p>Your score: <strong>${score}</strong> points out of 100 possible</p>
+                                    <p>Percentage: <strong>${percentage}%</strong></p>
+                                </div>
+                                <div class="stars-earned">
+                                    ${percentage >= 90 ? '⭐⭐⭐' : percentage >= 70 ? '⭐⭐' : percentage >= 50 ? '⭐' : 'Keep practicing!' }
+                                </div>
+                            </div>
+                            <button id="retry-level" class="retry-btn">Try Again</button>
+                            <button id="return-to-menu" class="menu-btn">Return to Level Menu</button>
+                        </div>
+                    `;
+                    
+                    document.getElementById('retry-level').addEventListener('click', function() {
+                        // Reset and start over
+                        questionCount = 0;
+                        score = 0;
+                        generateMissingDigitProblem();
                     });
                     
                     document.getElementById('return-to-menu').addEventListener('click', function() {
@@ -1448,5 +2227,7 @@
             }
         });
     </script>
+
+    <!-- Direct implementation for Subtraction Safari content loading -->
 </body>
 </html>

@@ -4,46 +4,44 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Direct controls initializing...');
+    console.log('Initializing direct controls');
     
-    // Setup main navigation as a fallback
-    setupMainNavigationFallback();
-});
-
-function setupMainNavigationFallback() {
-    // Main menu buttons - critical functionality
+    // Module switching functionality
     const modules = {
-        'btn-number-friends': 'number-friends-module',
-        'btn-addition-adventure': 'addition-adventure-module',
-        'btn-subtraction-safari': 'subtraction-safari-module',
-        'btn-money-market': 'money-market-module'
+        'welcome': document.getElementById('welcome-screen'),
+        'number-friends': document.getElementById('number-friends-module'),
+        'addition-adventure': document.getElementById('addition-adventure-module')
+        // Remove references to Subtraction Safari module
+        // Remove references to Money Market module
     };
     
-    // Add click handlers for all main navigation buttons
-    Object.keys(modules).forEach(buttonId => {
-        const button = document.getElementById(buttonId);
-        const moduleId = modules[buttonId];
+    const buttons = {
+        'number-friends': document.getElementById('btn-number-friends'),
+        'addition-adventure': document.getElementById('btn-addition-adventure')
+        // Remove references to Subtraction Safari button
+        // Remove references to Money Market button
+    };
+    
+    // Function to show a specific module
+    function showModule(moduleId) {
+        // Hide all modules
+        Object.values(modules).forEach(module => {
+            if (module) module.style.display = 'none';
+        });
         
-        if (button && moduleId) {
-            button.addEventListener('click', function(event) {
-                // Prevent default behavior to avoid conflicts
-                event.preventDefault();
-                
-                // Hide welcome screen
-                document.getElementById('welcome-screen').style.display = 'none';
-                
-                // Hide all modules
-                document.querySelectorAll('.module').forEach(module => {
-                    module.style.display = 'none';
-                });
-                
-                // Show selected module
-                document.getElementById(moduleId).style.display = 'block';
-                
-                console.log(`[Direct Control] Showing module: ${moduleId}`);
+        // Show selected module
+        const moduleToShow = modules[moduleId];
+        if (moduleToShow) moduleToShow.style.display = 'block';
+    }
+    
+    // Attach click handlers to buttons
+    Object.entries(buttons).forEach(([moduleId, button]) => {
+        if (button) {
+            button.addEventListener('click', function() {
+                showModule(moduleId);
             });
-            
-            console.log(`[Direct Control] Added handler for ${buttonId}`);
         }
     });
-}
+    
+    // ... any other direct control implementations ...
+});

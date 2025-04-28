@@ -2,48 +2,40 @@
 
 // Module navigation
 document.addEventListener('DOMContentLoaded', function() {
-    // Get module buttons
-    const numberFriendsBtn = document.getElementById('btn-number-friends');
-    const additionAdventureBtn = document.getElementById('btn-addition-adventure');
-    const subtractionSafariBtn = document.getElementById('btn-subtraction-safari');
-    const moneyMarketBtn = document.getElementById('btn-money-market');
+    console.log('Initializing Math Adventure with Nia');
     
-    // Get module containers
+    // Get module elements
     const welcomeScreen = document.getElementById('welcome-screen');
     const numberFriendsModule = document.getElementById('number-friends-module');
     const additionAdventureModule = document.getElementById('addition-adventure-module');
-    const subtractionSafariModule = document.getElementById('subtraction-safari-module');
-    const moneyMarketModule = document.getElementById('money-market-module');
     
-    // Function to show selected module
-    function showModule(module) {
-        // Hide all modules
+    // Get navigation buttons
+    const numberFriendsBtn = document.getElementById('btn-number-friends');
+    const additionAdventureBtn = document.getElementById('btn-addition-adventure');
+    
+    // Function to hide all modules
+    function hideAllModules() {
         welcomeScreen.style.display = 'none';
         numberFriendsModule.style.display = 'none';
         additionAdventureModule.style.display = 'none';
-        subtractionSafariModule.style.display = 'none';
-        moneyMarketModule.style.display = 'none';
-        
-        // Show selected module
-        module.style.display = 'block';
     }
     
-    // Set up navigation event listeners
-    numberFriendsBtn.addEventListener('click', function() {
-        showModule(numberFriendsModule);
-    });
+    // Initialize navigation
+    if (numberFriendsBtn) {
+        numberFriendsBtn.addEventListener('click', function() {
+            hideAllModules();
+            numberFriendsModule.style.display = 'block';
+            // Additional initialization if needed
+        });
+    }
     
-    additionAdventureBtn.addEventListener('click', function() {
-        showModule(additionAdventureModule);
-    });
-    
-    subtractionSafariBtn.addEventListener('click', function() {
-        showModule(subtractionSafariModule);
-    });
-    
-    moneyMarketBtn.addEventListener('click', function() {
-        showModule(moneyMarketModule);
-    });
+    if (additionAdventureBtn) {
+        additionAdventureBtn.addEventListener('click', function() {
+            hideAllModules();
+            additionAdventureModule.style.display = 'block';
+            // Additional initialization if needed
+        });
+    }
     
     // Number Explorer activity
     document.addEventListener('DOMContentLoaded', function() {
